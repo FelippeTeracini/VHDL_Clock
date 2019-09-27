@@ -14,33 +14,38 @@ entity ULA is
 		
 		--- OUT ---
 		saida : out std_logic_vector(N-1 downto 0);
-		zero : out std_logic;
+		zero : out std_logic
 	);
 	
 end ULA;
 
 Architecture comportamento of ULA is
 
-	signal resultado: std_logic_vector(N-1 downto 0);
+	signal resultado: integer;
+	signal ai : integer;
+	signal bi : integer;
 
 begin
 
  process(A,B,instrucao)
  
  begin
+	ai <= to_integer(unsigned(A));
+	bi <= to_integer(unsigned(B));
+ 
   case(instrucao) is
   when "00" => -- Adicao
-   resultado <= A + B ; 
+   resultado <= ai + bi ; 
   when "01" => -- SaiB
-   resultado <= B ;
+   resultado <= bi ;
   when "10" => -- Comparacao   
-   if(A=B) then
-    zero <= x"01" ;
+   if(ai = bi) then
+    zero <= '1';
    else
-    zero <= x"00" ;
+    zero <= '0' ;
    end if;
-  when others => resultado <= A + B ; 
+  when others => resultado <= ai + bi ; 
   end case;
  end process;
- saida <= resultado;
+ saida <= std_logic_vector(to_unsigned(resultado, saida'length));
 end comportamento;

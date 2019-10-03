@@ -14,7 +14,7 @@ entity ULA is
 		
 		--- OUT ---
 		saida : out std_logic_vector(N-1 downto 0);
-		zero : out std_logic
+		zero : out std_logic_vector(0 downto 0)
 	);
 	
 end ULA;
@@ -40,11 +40,11 @@ begin
    resultado <= bi ;
   when "10" => -- Comparacao   
    if(ai = bi) then
-    zero <= '1';
+    zero(0) <= '1';
    else
-    zero <= '0' ;
+    zero(0) <= '0' ;
    end if;
-  when others => resultado <= ai + bi ; 
+  when others => resultado <= 0	 ; 
   end case;
  end process;
  saida <= std_logic_vector(to_unsigned(resultado, saida'length));

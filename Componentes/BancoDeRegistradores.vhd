@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 -- Baseado no apendice C (Register Files) do COD (Patterson & Hennessy).
-entity bancoRegistradores is
+entity BancoDeRegistradores is
     generic
     (
 			--- 8 bits de dados
@@ -16,20 +16,19 @@ entity bancoRegistradores is
     (
         clk        : in std_logic;
 --
-        enderecoA       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
-        enderecoB       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
+
         enderecoC   : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
---
         dadoEscritaC    : in std_logic_vector((larguraDados-1) downto 0);
+        escreveC      : in std_logic;
 --
-        escreveC      : in std_logic := '1';
---
-        saidaA          : out std_logic_vector((larguraDados -1) downto 0);
-        saidaB          : out std_logic_vector((larguraDados -1) downto 0)
+
+		  enderecoA       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);  
+        saidaA          : out std_logic_vector((larguraDados -1) downto 0)
+        
     );
 end entity;
 
-architecture comportamento of bancoRegistradores is
+architecture comportamento of BancoDeRegistradores is
 
     subtype palavra_t is std_logic_vector((larguraDados-1) downto 0);
     type memoria_t is array(2**larguraEndBancoRegs-1 downto 0) of palavra_t;
@@ -49,9 +48,7 @@ begin
         end if;
 		  
 		--- Leitura Assincrona e sem "check de 0"
-		saidaA <= registrador(to_integer(unsigned(enderecoA)));
-		saidaB <= registrador(to_integer(unsigned(enderecoB)));
 		
     end process;
-
+saidaA <= registrador(to_integer(unsigned(enderecoA)));
 end architecture;

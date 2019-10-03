@@ -12,12 +12,12 @@ entity MUX2_1 is
 	port
 	(
 		-- Input ports
-		A	: in  std_ulogic_vector (N-1 downto 0);
-		B	: in  std_ulogic_vector (N-1 downto 0);
-		Sel : in std_ulogic;
+		A	: in  std_logic_vector (N-1 downto 0);
+		B	: in  std_logic_vector (N-1 downto 0);
+		Sel : in std_logic;
 
 		-- Output ports
-		Y	: out std_ulogic_vector (N-1 downto 0)
+		Y	: out std_logic_vector (N-1 downto 0)
 	);
 end entity;
 

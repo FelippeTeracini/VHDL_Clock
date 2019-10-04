@@ -8,8 +8,7 @@ entity CpuNoUc is
     (
 		larguraDadosRom : natural := 14;
       larguraDadosBanco : natural := 8;
-      larguraEnd : natural := 3;
-		larguraEndROM : natural := 5
+      larguraEnd : natural := 3
     );
 -- Leitura de 2 registradores e escrita em 1 registrador simultaneamente.
     port
@@ -22,7 +21,7 @@ entity CpuNoUc is
         bancoOut : out std_logic_vector((larguraDadosBanco -1) downto 0);
 		  
 		  -- In e Out ROM --
-		  Addr : out std_logic_vector(larguraEndROM-1 downto 0);
+		  Addr : out std_logic_vector(larguraEnd-1 downto 0);
 		  DadoROM : in std_logic_vector(larguraDadosRom-1 downto 0);
 
 		  -- Dados UC --
@@ -37,6 +36,7 @@ end entity;
 
 architecture comportamento of CpuNoUc is
 	
+	signal endJmp: std_logic_vector(larguraEnd-1 downto 0);
 	signal saidaMUX, imediato : std_logic_vector(larguraDadosBanco-1 downto 0);
 	signal outZero : std_logic_vector(0 downto 0);
 	signal selMuxEnd : std_logic;
@@ -57,14 +57,14 @@ begin
 			saidaZero => outZero
 		);
 		
-	Pc : entity work.PC generic map(addrWidth => larguraEndROM)
+	Pc : entity work.PC generic map(addrWidth => larguraEnd)
 		port map(
 			Clk => Clk,
 			enable_pc => '1',
 			reset_pc => '0',
 			Sel => selMuxEnd,
-			B_somador => "00001",
-			imediatoEnd => DadoROM(larguraEndROM-1 downto 0),
+			B_somador => "001",
+			imediatoEnd => DadoROM(larguraEnd-1 downto 0),
          Addr => Addr
 		);
 		

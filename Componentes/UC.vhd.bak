@@ -13,8 +13,6 @@ ENTITY UC IS
 		jne : OUT std_logic;
 		HabBanco : OUT std_logic;
 		HabRD : OUT std_logic;
-		RD : OUT std_logic,
-		WR : OUT std_logic,
 		MuxULA : OUT std_logic
 
 	);
@@ -40,8 +38,6 @@ BEGIN
 			jne <= '0';
 			HabBanco <= '1';
 			HabRD <= '0';
-			RD <= '0';
-			WR <= '0';
 			MuxULA <= '0';
 			
 			WHEN "001" => -- CMP
@@ -50,8 +46,6 @@ BEGIN
 			jne <= '0';
 			HabBanco <= '0';
 			HabRD <= '1';
-			RD <= '0';
-			WR <= '0';
 			MuxULA <= '0';
 
 			WHEN "010" => -- MOVi   
@@ -60,8 +54,6 @@ BEGIN
 			jne <= '0';
 			HabBanco <= '1';
 			HabRD <= '0';
-			RD <= '0';
-			WR <= '0';
 			MuxULA <= '0';
 
 			WHEN "011" => -- JMP   
@@ -70,8 +62,6 @@ BEGIN
 			jne <= '0';
 			HabBanco <= '0';
 			HabRD <= '0';
-			RD <= '0';
-			WR <= '0';
 			MuxULA <= '0';
 
 			WHEN "100" => -- JMPne
@@ -80,8 +70,6 @@ BEGIN
 			jne <= '1';
 			HabBanco <= '0';
 			HabRD <= '0';
-			RD <= '0';
-			WR <= '0';
 			MuxULA <= '0';
 
 			WHEN "101" => -- CLRSEG
@@ -90,8 +78,6 @@ BEGIN
 			jne <= '0';
 			HabBanco <= '0';
 			HabRD <= '0';
-			RD <= '0';
-			WR <= '0';
 			MuxULA <= '0';
 
 			WHEN "110" => -- STORE
@@ -100,8 +86,6 @@ BEGIN
 			jne <= '0';
 			HabBanco <= '0';
 			HabRD <= '0';
-			RD <= '0';
-			WR <= '0';
 			MuxULA <= '0';
 			
 			WHEN "111" => -- LOAD
@@ -110,8 +94,6 @@ BEGIN
 			jne <= '0';
 			HabBanco <= '1';
 			HabRD <= '0';
-			RD <= '1';
-			WR <= '0';
 			MuxULA <= '1';
 
 			WHEN OTHERS =>
@@ -120,8 +102,6 @@ BEGIN
 			jne <= '0';
 			HabBanco <= '0';
 			HabRD <= '0';
-			RD <= '0';
-			WR <= '1';
 			MuxULA <= '0';
 
 		END CASE;

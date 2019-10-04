@@ -16,7 +16,7 @@ entity Banco_ULA is
 		  enableZero : in std_logic;
 		  resetZero : in std_logic;
 		  instrucao : in std_logic_vector(1 downto 0);
-		  imediato : in std_logic_vector((larguraDados-1) downto 0);
+		  BInUla : in std_logic_vector((larguraDados-1) downto 0);
         enderecoEscrita   : in std_logic_vector((larguraEnd-1) downto 0);
         habWrite      : in std_logic;
 		  enderecoLeitura       : in std_logic_vector((larguraEnd-1) downto 0);  
@@ -43,23 +43,23 @@ begin
 			saidaA => saidaBanco
 		);
     
-	 Ula : entity work.ULA generic map(N => larguraDados)
+	Ula : entity work.ULA generic map(N => larguraDados)
 		port map(
 			A => saidaBanco,
-			B => imediato,
+			B => BInUla,
 			instrucao => instrucao,
 			saida => saidaULA,
 			zero => zeroULA
 		);
 		
-		Zero : entity work.registrador generic map(N => 1)
-			port map(
-				clk => Clk,
-				enable => enableZero,
-				reset => resetZero,
-				data => zeroULA,
-				output => saidaZero
-			);
+	Zero : entity work.registrador generic map(N => 1)
+		port map(
+			clk => Clk,
+			enable => enableZero,
+			reset => resetZero,
+			data => zeroULA,
+			output => saidaZero
+		);
 		
 		bancoOut <= saidaBanco;
 

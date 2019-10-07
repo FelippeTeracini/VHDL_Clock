@@ -1,0 +1,51 @@
+movi seconds, $0
+movi minutes, $0
+movi hours, $0
+movi time_base, $0
+movi add_hour, $0
+movi add_min, $0
+
+CHECK_HOUR_BUTTON:
+load add_hour, $2
+cmp add_hour, $1
+jmpne CHECK_MINUTE_BUTTON
+movi add_hour, $0
+store add_hour, $2
+jmp CHANGE_HOUR
+
+CHECK_MINUTE_BUTTON:
+load add_min, $1
+cmp add_min, $1
+jmpne CHECK_SEC_LOOP
+movi add_min, $0
+store add_min, $1
+jmp CHANGE_MINUTE
+
+CHECK_SEC_LOOP:
+load time_base, $0
+cmp time_base, $1
+jmpne CHECK_HOUR_BUTTON
+
+START_LOOP:
+add seconds, $1
+cmp seconds, $60
+jmpne IF1
+movi seconds, $0
+CHANGE_MINUTE:
+add minutes, $1
+IF1:
+cmp minutes, $60
+jmpne IF2
+movi minutes, $0
+CHANGE_HOUR:
+add hours, $1
+IF2:
+cmp hours, $24
+jmpne IF3
+movi hours, $0
+IF3:
+store minutes, $3
+store hours, $4
+movi time_base, $0
+store time_base, $0
+jmp CHECK_HOUR_LOOP

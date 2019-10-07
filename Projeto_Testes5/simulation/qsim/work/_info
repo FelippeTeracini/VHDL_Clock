@@ -1,0 +1,102 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Felippe/Documents/Insper/Semestre-6/Design_de_Computadores/Relogio_VHDL/Projeto_Testes5/simulation/qsim
+Ecpu
+Z1 w1570212743
+Z2 DPx8 cyclonev 18 cyclonev_atom_pack 0 22 YZlobdkPHzE;N99jHfcMc3
+Z3 DPx8 cyclonev 19 cyclonev_components 0 22 WF17oJHHbo`b[5Bl5P6_h0
+Z4 DPx12 altera_lnsim 23 altera_lnsim_components 0 22 dfin^_@l97Ngz6cK0kjS62
+Z5 DPx4 ieee 16 vital_primitives 0 22 G>kiXP8Q9dRClKfK1Zn7j1
+Z6 DPx6 altera 11 dffeas_pack 0 22 ?bDUB9Db2N8iCCALNL;CT3
+Z7 DPx4 ieee 12 vital_timing 0 22 J>EBealN09f8GzldA[z2>3
+Z8 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z9 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z10 DPx6 altera 28 altera_primitives_components 0 22 c]VUMXSEi8Z`KM1bem<:B3
+R0
+Z11 8CPU_UC.vho
+Z12 FCPU_UC.vho
+l0
+L38
+VAag?US<Q4FjcW6V=1nSIR2
+!s100 4OaCQ9_1mSUd_?aMPCeG40
+Z13 OV;C;10.5b;63
+32
+Z14 !s110 1570212744
+!i10b 1
+Z15 !s108 1570212743.000000
+Z16 !s90 -work|work|CPU_UC.vho|
+Z17 !s107 CPU_UC.vho|
+!i113 1
+Z18 o-work work
+Z19 tExplicit 1 CvgOpt 0
+Astructure
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 3 cpu 0 22 Aag?US<Q4FjcW6V=1nSIR2
+l420
+L87
+VDH:FQzd`3cYSaz4OAMZMg2
+!s100 ncSHLEc2>c6D33V<V1D2K0
+R13
+32
+R14
+!i10b 1
+R15
+R16
+R17
+!i113 1
+R18
+R19
+Ecpu_vhd_vec_tst
+Z20 w1570212741
+R8
+R9
+R0
+Z21 8Waveform.vwf.vht
+Z22 FWaveform.vwf.vht
+l0
+L31
+VQ0YIcL]aY35k3<F9DIej43
+!s100 654=zHHGF54m_P]e>k^XL0
+R13
+32
+R14
+!i10b 1
+Z23 !s108 1570212744.000000
+Z24 !s90 -work|work|Waveform.vwf.vht|
+Z25 !s107 Waveform.vwf.vht|
+!i113 1
+R18
+R19
+Acpu_arch
+R8
+R9
+Z26 DEx4 work 15 cpu_vhd_vec_tst 0 22 Q0YIcL]aY35k3<F9DIej43
+l50
+L33
+V62lO[L=]g]5eTcWBn<;ih2
+!s100 U2?6VflZmdm^?Z>f_]^z=2
+R13
+32
+R14
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R18
+R19

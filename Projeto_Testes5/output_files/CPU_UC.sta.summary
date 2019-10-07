@@ -1,0 +1,101 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'DadoROM[11]'
+Slack : -6.637
+TNS   : -55.170
+
+Type  : Slow 1100mV 85C Model Setup 'Clk'
+Slack : -2.579
+TNS   : -161.634
+
+Type  : Slow 1100mV 85C Model Hold 'Clk'
+Slack : 0.001
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'DadoROM[11]'
+Slack : 1.382
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Clk'
+Slack : -0.724
+TNS   : -77.929
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'DadoROM[11]'
+Slack : 0.304
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'DadoROM[11]'
+Slack : -6.988
+TNS   : -57.243
+
+Type  : Slow 1100mV 0C Model Setup 'Clk'
+Slack : -2.352
+TNS   : -145.980
+
+Type  : Slow 1100mV 0C Model Hold 'Clk'
+Slack : -0.171
+TNS   : -0.329
+
+Type  : Slow 1100mV 0C Model Hold 'DadoROM[11]'
+Slack : 1.186
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Clk'
+Slack : -0.724
+TNS   : -77.862
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'DadoROM[11]'
+Slack : 0.314
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'DadoROM[11]'
+Slack : -2.619
+TNS   : -21.724
+
+Type  : Fast 1100mV 85C Model Setup 'Clk'
+Slack : -1.419
+TNS   : -83.012
+
+Type  : Fast 1100mV 85C Model Hold 'Clk'
+Slack : -0.058
+TNS   : -0.141
+
+Type  : Fast 1100mV 85C Model Hold 'DadoROM[11]'
+Slack : 0.571
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Clk'
+Slack : -0.090
+TNS   : -6.020
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'DadoROM[11]'
+Slack : -0.012
+TNS   : -0.041
+
+Type  : Fast 1100mV 0C Model Setup 'DadoROM[11]'
+Slack : -2.434
+TNS   : -19.791
+
+Type  : Fast 1100mV 0C Model Setup 'Clk'
+Slack : -1.221
+TNS   : -72.209
+
+Type  : Fast 1100mV 0C Model Hold 'Clk'
+Slack : -0.096
+TNS   : -0.242
+
+Type  : Fast 1100mV 0C Model Hold 'DadoROM[11]'
+Slack : 0.466
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Clk'
+Slack : -0.090
+TNS   : -6.090
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'DadoROM[11]'
+Slack : 0.000
+TNS   : 0.000
+
+------------------------------------------------------------

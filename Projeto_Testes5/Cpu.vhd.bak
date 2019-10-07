@@ -1,0 +1,78 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+-- Baseado no apendice C (Register Files) do COD (Patterson & Hennessy).
+entity Cpu is
+    generic
+    (
+		larguraDadosRom : natural := 14;
+      larguraDadosBanco : natural := 8;
+      larguraEnd : natural := 3
+    );
+-- Leitura de 2 registradores e escrita em 1 registrador simultaneamente.
+    port
+    (
+		  -- Clock --
+        Clk      : in std_logic;
+		  
+		  -- In e Out CPU --
+		  DataIn   : in std_logic_vector((larguraDadosBanco-1) downto 0);  
+        bancoOut : out std_logic_vector((larguraDadosBanco -1) downto 0);
+		  
+		  -- In e Out ROM --
+		  Addr     : out std_logic_vector(larguraEnd-1 downto 0);
+		  DadoROM  : in std_logic_vector(larguraDadosRom-1 downto 0)
+
+    );
+end entity;
+
+architecture comportamento of Cpu is
+	
+begin
+
+	CPUnoUC : entity work.CpuNoUc generic map(
+			larguraDadosROM => larguraDadosROM,
+			larguraDadosBanco => larguraDadosBanco,
+			larguraEnd => larguraEnd
+		)
+		
+		port map(
+			-- Clock --
+        Clk => Clk,
+		  
+		  -- In e Out CPU --
+		  DataIn : in std_logic_vector((larguraDadosBanco-1) downto 0);  
+        bancoOut : out std_logic_vector((larguraDadosBanco -1) downto 0);
+		  
+		  -- In e Out ROM --
+		  Addr : out std_logic_vector(larguraEnd-1 downto 0);
+		  DadoROM : in std_logic_vector(larguraDadosRom-1 downto 0);
+
+		  -- Dados UC --
+		  habWrite      : in std_logic;
+		  instrucao : in std_logic_vector(1 downto 0);
+		  enableZero : in std_logic;
+		  selMux : in std_logic;
+		  jmpne : in std_logic;
+		  jmp : in std_logic
+		);
+		
+	Uc : entity work.UC generic map()
+		port map(
+			--- IN ---
+			opcode : IN std_logic_vector(2 DOWNTO 0);
+
+			--- OUT ---
+			op : OUT std_logic_vector(1 DOWNTO 0);
+			jmp : OUT std_logic;
+			jne : OUT std_logic;
+			HabBanco : OUT std_logic;
+			HabRD : OUT std_logic;
+			MuxULA : OUT std_logic
+		);
+
+	selMuxEnd <= (jmpne AND outZero(0)) NOR (jmp);
+	
+	
+end architecture;

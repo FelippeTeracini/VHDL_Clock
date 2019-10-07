@@ -46,6 +46,7 @@ movi hours, $0
 IF3:
 store minutes, $3
 store hours, $4
+store seconds, $5
 movi time_base, $0
 store time_base, $0
-jmp CHECK_HOUR_LOOP
+jmp CHECK_HOUR_BUTTON

@@ -116,13 +116,15 @@ BEGIN
 			enableHour => enableHrs,
 			enableMinute => enableMin,
 			enableSecond => enableSec,
+			selAMPM => SW(17),
 			
 			saidaHEX0 => HEX2,
 			saidaHEX1 => HEX3,
 			saidaHEX2 => HEX4,
 			saidaHEX3 => HEX5,
 			saidaHEX4 => HEX6,
-			saidaHEX5 => HEX7
+			saidaHEX5 => HEX7,
+			saidaHEX7 => HEX0
 		);
 		
 	Buttons : entity work.Button_IO 
@@ -136,12 +138,9 @@ BEGIN
 			output => dataIn(0)
 		);
 		
-	HEX0 <= "1111111";
 	HEX1 <= "1111111";
 	
 	LEDR(17 downto 10) <= addrOut;
---	LEDR(7 downto 0) <= SW(7 downto 0);
-	--LEDG(3 downto 0) <= not(KEY);
 	LEDR(0) <= wr;
 	LEDR(1) <= rd;
 	LEDR(3) <= reset_butHrs;

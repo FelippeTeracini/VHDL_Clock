@@ -4,16 +4,14 @@ USE ieee.numeric_std.ALL;
 
 ENTITY BCD IS
 	PORT (
-		--- IN ---
---		SW  : IN std_logic_vector(17 downto 0);
---		LEDR  : OUT std_logic_vector(17 downto 0) := (others => '0');
 		clk : IN std_logic;
 		dataOut : IN std_logic_vector(7 downto 0);
 		enableSecond : IN std_logic;
 		enableMinute : IN std_logic;
 		enableHour : IN std_logic;
+		selAMPM  : IN std_logic;
 		
-		saidaHEX0, saidaHEX1, saidaHEX2, saidaHEX3, saidaHEX4, saidaHEX5 : OUT STD_LOGIC_VECTOR(6 downto 0)
+		saidaHEX0, saidaHEX1, saidaHEX2, saidaHEX3, saidaHEX4, saidaHEX5, saidaHEX7 : OUT STD_LOGIC_VECTOR(6 downto 0)
 
 	);
 
@@ -21,16 +19,28 @@ END BCD;
 
 ARCHITECTURE comportamento OF BCD IS
 
-	signal saidaBinaryToBCD0, saidaBinaryToBCD1 : STD_LOGIC_VECTOR(3 downto 0);
-	signal saidaReg0, saidaReg1, saidaReg2, saidaReg3, saidaReg4, saidaReg5 : STD_LOGIC_VECTOR(3 downto 0);
+	signal saidaBinaryToBCD0, saidaBinaryToBCD1, dataAMPM : STD_LOGIC_VECTOR(3 downto 0);
+	signal saidaReg0, saidaReg1, saidaReg2, saidaReg3, saidaReg4, saidaReg5, saidaRegAMPM : STD_LOGIC_VECTOR(3 downto 0);
+	
+	signal tobcd : std_logic_vector(7 downto 0);
 
 BEGIN
 
 	BinaryConverter : entity work.BinaryConverter
 		port map(
-			binary => dataOut,
+			binary => tobcd,
 			digit0 => saidaBinaryToBCD0,
 			digit1 => saidaBinaryToBCD1
+		);
+		
+	AMPM : entity work.AMPM 
+		port map (
+			selAmPm => selAMPM,
+			dataOut => dataOut,
+			EnableHrs => enableHour,
+		
+			ToBCD => tobcd,
+			ToReg => dataAMPM
 		);
 
 	RegSecond0 : entity work.registrador
@@ -105,6 +115,18 @@ BEGIN
 			output => saidaReg5
 		);
 		
+	RegAMPM : entity work.registrador
+		generic map (N => 4)
+		port map(
+			clk => clk,
+			enable => enableHour,
+			reset	=> '0',
+			data => dataAMPM,
+
+			-- Output ports
+			output => saidaRegAMPM
+		);
+		
 
 	H0: entity work.conversorHex7Seg 
 		port map(
@@ -174,6 +196,18 @@ BEGIN
 		  
         -- Output ports
         saida7seg => saidaHEX5
+		 );
+		 
+	HAMPM: entity work.conversorHex7Seg 
+		port map(
+			-- Input ports
+        dadoHex => saidaRegAMPM,
+        apaga   => not(selAMPM),
+--        negativo => SW(16),
+--        overFlow => SW(15),
+		  
+        -- Output ports
+        saida7seg => saidaHEX7
 		 );
 	
 --	LEDR <= SW;

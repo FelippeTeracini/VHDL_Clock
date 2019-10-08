@@ -24,7 +24,7 @@ begin
 		port map (clk => clk, saida_clk => mux0);
 		
 	base_rapida : entity work.Base_de_tempo
-		generic map (N => 2500000)
+		generic map (N => 500000)
 		port map (clk => clk, saida_clk => mux1);
 
 	Mux : entity work.MUX2_1 

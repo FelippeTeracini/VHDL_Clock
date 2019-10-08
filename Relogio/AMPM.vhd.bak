@@ -1,0 +1,27 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+ENTITY AMPM IS
+	PORT (
+		EnableAmPm : IN std_logic;
+		dataOut : IN std_logic_vector(7 downto 0);
+		enableSecond : IN std_logic;
+		enableMinute : IN std_logic;
+		enableHour : IN std_logic;
+		
+		saidaHEX0, saidaHEX1, saidaHEX2, saidaHEX3, saidaHEX4, saidaHEX5 : OUT STD_LOGIC_VECTOR(6 downto 0)
+
+	);
+END AMPM;
+
+ARCHITECTURE comportamento OF AMPM IS
+
+	signal saidaBinaryToBCD0, saidaBinaryToBCD1 : STD_LOGIC_VECTOR(3 downto 0);
+	signal saidaReg0, saidaReg1, saidaReg2, saidaReg3, saidaReg4, saidaReg5 : STD_LOGIC_VECTOR(3 downto 0);
+
+BEGIN
+
+
+
+END comportamento;

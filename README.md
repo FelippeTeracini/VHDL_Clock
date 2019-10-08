@@ -8,13 +8,14 @@ Felippe Teracini, Guilherme Schoeri, Juan Garcia
 4. [Instructions](#instructions)
 5. [CU Signals](#cu-signals)
 6. [Addressing Modes](#addressing-modes)
-7. [Assembly](#assembly)
-8. [Assembler](#assembler)
-9. [CPU and ROM](#cpu-and-rom)
-10. [IO](#io)
-11. [Memory Mapping](#memory-mapping)
-12. [How to use](#how-to-use)
-13. [References](#references)
+7. [Address and Register table](#address-and-register-table)
+8. [Assembly](#assembly)
+9. [Assembler](#assembler)
+10. [CPU and ROM](#cpu-and-rom)
+11. [IO](#io)
+12. [Memory Mapping](#memory-mapping)
+13. [How to use](#how-to-use)
+14. [References](#references)
 
 
 ## Introduction
@@ -141,6 +142,21 @@ while (1) {
 | 3 bits        | 11 bits       |                     
 
 
+## Address and Register table
+
+| REGISTER   NAME     | REGISTER ADDRESS  | 
+| ------------- |:-------------:|
+| hours         |      0        |         
+| minutes       |      1        |  
+| seconds       |      2        |
+| time_base     |      3        |
+| add_min       |      4        |
+| add_hour      |      5        |
+| 6             |      6        |         
+| 7             |      7        |         
+
+
+
 ## Assembly
 [Assembly Code](https://github.com/TeraByte900/Relogio_VHDL/blob/master/Assembly.txt "Assembly Code")
 
@@ -163,8 +179,15 @@ Inserir imagem
 Inserir imagem
 
 ## How-to-use
-Inserir imagem
-
+ ### 1. Using the assembler:
+  First install *python 3.7*.
+ 
+  #### 1.1. to reproduce the project:
+   To create the `.mif` code responsible for the Clock on the FPGA, using python 3.7 run `python3 watch_assembler.py -mif    Assembly.txt > initROM.mif`
+  #### 1.2. creating your own mif:
+   To create your `.mif` code first you need a assembly file that has the **exact same instructions and sintax** explained above. You may need/want to alter the dict table on `def get_register(self, register):` in the `watch_assembler.py` if you need to alter the names of the registers.
+  
+  
 ## References
 [VHDL Quick Reference Card da Synthworks.](http://www.synthworks.com/downloads/vhdl_quickref.pdf)
 

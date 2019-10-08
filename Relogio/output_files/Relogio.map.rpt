@@ -1,0 +1,640 @@
+Analysis & Synthesis report for Relogio
+Tue Oct 08 09:41:54 2019
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: romMif:Rom
+ 11. Parameter Settings for User Entity Instance: Cpu:Cpu
+ 12. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC
+ 13. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA
+ 14. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco
+ 15. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula
+ 16. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero
+ 17. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc
+ 18. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|MUX2_1:Mux
+ 19. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|somadorGenerico:Somador
+ 20. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC
+ 21. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|MUX2_1:Mux
+ 22. Port Connectivity Checks: "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc"
+ 23. Port Connectivity Checks: "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA"
+ 24. Post-Synthesis Netlist Statistics for Top Partition
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Oct 08 09:41:54 2019       ;
+; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                      ; Relogio                                     ;
+; Top-level Entity Name              ; TopLevelTeste                               ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 136                                         ;
+;     Total combinational functions  ; 80                                          ;
+;     Dedicated logic registers      ; 70                                          ;
+; Total registers                    ; 70                                          ;
+; Total pins                         ; 27                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; TopLevelTeste      ; Relogio            ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                   ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+; romMif.vhd                       ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/romMif.vhd               ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/ULA.vhd                  ;         ;
+; somadorGenerico.vhd              ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/somadorGenerico.vhd      ;         ;
+; registrador.vhd                  ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/registrador.vhd          ;         ;
+; PC.vhd                           ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/PC.vhd                   ;         ;
+; MUX.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/MUX.vhd                  ;         ;
+; CpuNoUc.vhd                      ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd              ;         ;
+; Cpu.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/Cpu.vhd                  ;         ;
+; BancoDeRegistradores.vhd         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/BancoDeRegistradores.vhd ;         ;
+; Banco_ULA.vhd                    ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/Banco_ULA.vhd            ;         ;
+; UC.vhd                           ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/UC.vhd                   ;         ;
+; TopLevelTeste.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd        ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 136       ;
+;                                             ;           ;
+; Total combinational functions               ; 80        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 46        ;
+;     -- 3 input functions                    ; 15        ;
+;     -- <=2 input functions                  ; 19        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 68        ;
+;     -- arithmetic mode                      ; 12        ;
+;                                             ;           ;
+; Total registers                             ; 70        ;
+;     -- Dedicated logic registers            ; 70        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 27        ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; Clk~input ;
+; Maximum fan-out                             ; 70        ;
+; Total fan-out                               ; 506       ;
+; Average fan-out                             ; 2.48      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                            ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                ; Entity Name          ; Library Name ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+----------------------+--------------+
+; |TopLevelTeste                           ; 80 (0)              ; 70 (0)                    ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |TopLevelTeste                                                                     ; TopLevelTeste        ; work         ;
+;    |Cpu:Cpu|                             ; 71 (0)              ; 70 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu                                                             ; Cpu                  ; work         ;
+;       |CpuNoUc:CPUnoUC|                  ; 70 (0)              ; 70 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC                                             ; CpuNoUc              ; work         ;
+;          |Banco_ULA:BncULA|              ; 64 (0)              ; 64 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA                            ; Banco_ULA            ; work         ;
+;             |BancoDeRegistradores:Banco| ; 48 (48)             ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco ; BancoDeRegistradores ; work         ;
+;             |ULA:Ula|                    ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula                    ; ULA                  ; work         ;
+;          |PC:Pc|                         ; 6 (0)               ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc                                       ; PC                   ; work         ;
+;             |registrador:PC|             ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC                        ; registrador          ; work         ;
+;       |UC:Uc|                            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|UC:Uc                                                       ; UC                   ; work         ;
+;    |romMif:Rom|                          ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|romMif:Rom                                                          ; romMif               ; work         ;
++------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                ;
++---------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                       ; Reason for Removal                          ;
++---------------------------------------------------------------------+---------------------------------------------+
+; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero|output[0] ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 1                               ;                                             ;
++---------------------------------------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 70    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 64    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: romMif:Rom ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; datawidth      ; 14    ; Signed Integer                 ;
+; addrwidth      ; 6     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu ;
++-------------------+-------+--------------------------+
+; Parameter Name    ; Value ; Type                     ;
++-------------------+-------+--------------------------+
+; larguradadosrom   ; 14    ; Signed Integer           ;
+; larguradadosbanco ; 8     ; Signed Integer           ;
+; larguraend        ; 3     ; Signed Integer           ;
+; larguraendrom     ; 6     ; Signed Integer           ;
++-------------------+-------+--------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC ;
++-------------------+-------+------------------------------------------+
+; Parameter Name    ; Value ; Type                                     ;
++-------------------+-------+------------------------------------------+
+; larguradadosrom   ; 14    ; Signed Integer                           ;
+; larguradadosbanco ; 8     ; Signed Integer                           ;
+; larguraend        ; 3     ; Signed Integer                           ;
+; larguraendrom     ; 6     ; Signed Integer                           ;
++-------------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; larguradados   ; 8     ; Signed Integer                                               ;
+; larguraend     ; 3     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco ;
++---------------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name      ; Value ; Type                                                                               ;
++---------------------+-------+------------------------------------------------------------------------------------+
+; larguradados        ; 8     ; Signed Integer                                                                     ;
+; larguraendbancoregs ; 3     ; Signed Integer                                                                     ;
++---------------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero ;
++----------------+-------+-------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                          ;
++----------------+-------+-------------------------------------------------------------------------------+
+; n              ; 1     ; Signed Integer                                                                ;
++----------------+-------+-------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; addrwidth      ; 6     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|MUX2_1:Mux ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; n              ; 6     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|somadorGenerico:Somador ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; larguradados   ; 6     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC ;
++----------------+-------+------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                             ;
++----------------+-------+------------------------------------------------------------------+
+; n              ; 6     ; Signed Integer                                                   ;
++----------------+-------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|MUX2_1:Mux ;
++----------------+-------+--------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                   ;
++----------------+-------+--------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                         ;
++----------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc" ;
++-----------------+-------+----------+----------------------+
+; Port            ; Type  ; Severity ; Details              ;
++-----------------+-------+----------+----------------------+
+; enable_pc       ; Input ; Info     ; Stuck at VCC         ;
+; reset_pc        ; Input ; Info     ; Stuck at GND         ;
+; b_somador[5..1] ; Input ; Info     ; Stuck at GND         ;
+; b_somador[0]    ; Input ; Info     ; Stuck at VCC         ;
++-----------------+-------+----------+----------------------+
+
+
++----------------------------------------------------------------------+
+; Port Connectivity Checks: "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA" ;
++-----------+-------+----------+---------------------------------------+
+; Port      ; Type  ; Severity ; Details                               ;
++-----------+-------+----------+---------------------------------------+
+; resetzero ; Input ; Info     ; Stuck at GND                          ;
++-----------+-------+----------+---------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 27                          ;
+; cycloneiii_ff         ; 70                          ;
+;     ENA               ; 64                          ;
+;     plain             ; 6                           ;
+; cycloneiii_lcell_comb ; 81                          ;
+;     arith             ; 12                          ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 69                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 46                          ;
+;                       ;                             ;
+; Max LUT depth         ; 7.70                        ;
+; Average LUT depth     ; 5.60                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Oct 08 09:41:41 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file rommif.vhd
+    Info (12022): Found design unit 1: romMif-initFileROM File: C:/intelFPGA_lite/18.1/Relogio/romMif.vhd Line: 19
+    Info (12023): Found entity 1: romMif File: C:/intelFPGA_lite/18.1/Relogio/romMif.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file binary_to_bcd.vhd
+    Info (12022): Found design unit 1: binary_to_bcd-logic File: C:/intelFPGA_lite/18.1/Relogio/binary_to_bcd.vhd Line: 43
+    Info (12023): Found entity 1: binary_to_bcd File: C:/intelFPGA_lite/18.1/Relogio/binary_to_bcd.vhd Line: 30
+Info (12021): Found 2 design units, including 1 entities, in source file ula.vhd
+    Info (12022): Found design unit 1: ULA-comportamento File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 22
+    Info (12023): Found entity 1: ULA File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somadorgenerico.vhd
+    Info (12022): Found design unit 1: somadorGenerico-comportamento File: C:/intelFPGA_lite/18.1/Relogio/somadorGenerico.vhd Line: 17
+    Info (12023): Found entity 1: somadorGenerico File: C:/intelFPGA_lite/18.1/Relogio/somadorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somadorcompleto4bits.vhd
+    Info (12022): Found design unit 1: SomadorCompleto4Bits-Soma File: C:/intelFPGA_lite/18.1/Relogio/SomadorCompleto4Bits.vhd Line: 21
+    Info (12023): Found entity 1: SomadorCompleto4Bits File: C:/intelFPGA_lite/18.1/Relogio/SomadorCompleto4Bits.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file somadorcompleto.vhd
+    Info (12022): Found design unit 1: SomadorCompleto-Soma File: C:/intelFPGA_lite/18.1/Relogio/SomadorCompleto.vhd Line: 21
+    Info (12023): Found entity 1: SomadorCompleto File: C:/intelFPGA_lite/18.1/Relogio/SomadorCompleto.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file single_port_rom.vhd
+    Info (12022): Found design unit 1: single_port_rom-rtl File: C:/intelFPGA_lite/18.1/Relogio/single_port_rom.vhd Line: 17
+    Info (12023): Found entity 1: single_port_rom File: C:/intelFPGA_lite/18.1/Relogio/single_port_rom.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file romnomif.vhd
+    Info (12022): Found design unit 1: RomNoMif-assincrona File: C:/intelFPGA_lite/18.1/Relogio/RomNoMif.vhd Line: 16
+    Info (12023): Found entity 1: RomNoMif File: C:/intelFPGA_lite/18.1/Relogio/RomNoMif.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file rom_pc.vhd
+    Info (12022): Found design unit 1: Rom_PC-assincrona File: C:/intelFPGA_lite/18.1/Relogio/Rom_PC.vhd Line: 21
+    Info (12023): Found entity 1: Rom_PC File: C:/intelFPGA_lite/18.1/Relogio/Rom_PC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file registrador.vhd
+    Info (12022): Found design unit 1: registrador-comportamento File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 26
+    Info (12023): Found entity 1: registrador File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file ram.vhd
+    Info (12022): Found design unit 1: ram-rtl File: C:/intelFPGA_lite/18.1/Relogio/ram.vhd Line: 22
+    Info (12023): Found entity 1: ram File: C:/intelFPGA_lite/18.1/Relogio/ram.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
+    Info (12022): Found design unit 1: PC-assincrona File: C:/intelFPGA_lite/18.1/Relogio/PC.vhd Line: 20
+    Info (12023): Found entity 1: PC File: C:/intelFPGA_lite/18.1/Relogio/PC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file mux.vhd
+    Info (12022): Found design unit 1: MUX2_1-Arch File: C:/intelFPGA_lite/18.1/Relogio/MUX.vhd Line: 25
+    Info (12023): Found entity 1: MUX2_1 File: C:/intelFPGA_lite/18.1/Relogio/MUX.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file cpunouc.vhd
+    Info (12022): Found design unit 1: CpuNoUc-comportamento File: C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd Line: 38
+    Info (12023): Found entity 1: CpuNoUc File: C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file cpu.vhd
+    Info (12022): Found design unit 1: Cpu-comportamento File: C:/intelFPGA_lite/18.1/Relogio/Cpu.vhd Line: 34
+    Info (12023): Found entity 1: Cpu File: C:/intelFPGA_lite/18.1/Relogio/Cpu.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file binary_to_bcd_digit.vhd
+    Info (12022): Found design unit 1: binary_to_bcd_digit-logic File: C:/intelFPGA_lite/18.1/Relogio/binary_to_bcd_digit.vhd Line: 36
+    Info (12023): Found entity 1: binary_to_bcd_digit File: C:/intelFPGA_lite/18.1/Relogio/binary_to_bcd_digit.vhd Line: 26
+Info (12021): Found 2 design units, including 1 entities, in source file bancoderegistradores.vhd
+    Info (12022): Found design unit 1: BancoDeRegistradores-comportamento File: C:/intelFPGA_lite/18.1/Relogio/BancoDeRegistradores.vhd Line: 31
+    Info (12023): Found entity 1: BancoDeRegistradores File: C:/intelFPGA_lite/18.1/Relogio/BancoDeRegistradores.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file banco_ula.vhd
+    Info (12022): Found design unit 1: Banco_ULA-comportamento File: C:/intelFPGA_lite/18.1/Relogio/Banco_ULA.vhd Line: 29
+    Info (12023): Found entity 1: Banco_ULA File: C:/intelFPGA_lite/18.1/Relogio/Banco_ULA.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file conversorhex7seg.vhd
+    Info (12022): Found design unit 1: conversorHex7Seg-comportamento File: C:/intelFPGA_lite/18.1/Relogio/conversorHex7Seg.vhd Line: 17
+    Info (12023): Found entity 1: conversorHex7Seg File: C:/intelFPGA_lite/18.1/Relogio/conversorHex7Seg.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file output_files/relogio.vhd
+    Info (12022): Found design unit 1: Relogio-rtl File: C:/intelFPGA_lite/18.1/Relogio/output_files/Relogio.vhd Line: 13
+    Info (12023): Found entity 1: Relogio File: C:/intelFPGA_lite/18.1/Relogio/output_files/Relogio.vhd Line: 6
+Info (12021): Found 2 design units, including 1 entities, in source file uc.vhd
+    Info (12022): Found design unit 1: UC-comportamento File: C:/intelFPGA_lite/18.1/Relogio/UC.vhd Line: 24
+    Info (12023): Found entity 1: UC File: C:/intelFPGA_lite/18.1/Relogio/UC.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file toplevel.vhd
+    Info (12022): Found design unit 1: TopLevel-comportamento File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 18
+    Info (12023): Found entity 1: TopLevel File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file bcd.vhd
+    Info (12022): Found design unit 1: BCD-comportamento File: C:/intelFPGA_lite/18.1/Relogio/BCD.vhd Line: 22
+    Info (12023): Found entity 1: BCD File: C:/intelFPGA_lite/18.1/Relogio/BCD.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file binaryconverter.vhd
+    Info (12022): Found design unit 1: BinaryConverter-comportamento File: C:/intelFPGA_lite/18.1/Relogio/BinaryConverter.vhd Line: 14
+    Info (12023): Found entity 1: BinaryConverter File: C:/intelFPGA_lite/18.1/Relogio/BinaryConverter.vhd Line: 5
+Info (12021): Found 4 design units, including 1 entities, in source file divisorgenerico.vhd
+    Info (12022): Found design unit 1: divisorGenerico-divPor2 File: C:/intelFPGA_lite/18.1/Relogio/divisorGenerico.vhd Line: 16
+    Info (12022): Found design unit 2: divisorGenerico-divPotenciaDe2 File: C:/intelFPGA_lite/18.1/Relogio/divisorGenerico.vhd Line: 31
+    Info (12022): Found design unit 3: divisorGenerico-divInteiro File: C:/intelFPGA_lite/18.1/Relogio/divisorGenerico.vhd Line: 46
+    Info (12023): Found entity 1: divisorGenerico File: C:/intelFPGA_lite/18.1/Relogio/divisorGenerico.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file base_de_tempo.vhd
+    Info (12022): Found design unit 1: Base_de_tempo-comportamento File: C:/intelFPGA_lite/18.1/Relogio/base_de_tempo.vhd Line: 13
+    Info (12023): Found entity 1: Base_de_tempo File: C:/intelFPGA_lite/18.1/Relogio/base_de_tempo.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file base_de_tempo_bloco.vhd
+    Info (12022): Found design unit 1: Base_de_tempo_bloco-comportamento File: C:/intelFPGA_lite/18.1/Relogio/Base_de_tempo_bloco.vhd Line: 16
+    Info (12023): Found entity 1: Base_de_tempo_bloco File: C:/intelFPGA_lite/18.1/Relogio/Base_de_tempo_bloco.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file tristate.vhd
+    Info (12022): Found design unit 1: tristate-Arch File: C:/intelFPGA_lite/18.1/Relogio/tristate.vhd Line: 20
+    Info (12023): Found entity 1: tristate File: C:/intelFPGA_lite/18.1/Relogio/tristate.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file decoder_endereco.vhd
+    Info (12022): Found design unit 1: Decoder_endereco-comportamento File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 27
+    Info (12023): Found entity 1: Decoder_endereco File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file button_io.vhd
+    Info (12022): Found design unit 1: Button_IO-comportamento File: C:/intelFPGA_lite/18.1/Relogio/Button_IO.vhd Line: 18
+    Info (12023): Found entity 1: Button_IO File: C:/intelFPGA_lite/18.1/Relogio/Button_IO.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file toplevelteste.vhd
+    Info (12022): Found design unit 1: TopLevelTeste-comportamento File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 18
+    Info (12023): Found entity 1: TopLevelTeste File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 5
+Info (12127): Elaborating entity "TopLevelTeste" for the top level hierarchy
+Info (12128): Elaborating entity "romMif" for hierarchy "romMif:Rom" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 25
+Warning (10541): VHDL Signal Declaration warning at romMif.vhd(22): used implicit default value for signal "content" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/intelFPGA_lite/18.1/Relogio/romMif.vhd Line: 22
+Info (12128): Elaborating entity "Cpu" for hierarchy "Cpu:Cpu" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 35
+Info (12128): Elaborating entity "CpuNoUc" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC" File: C:/intelFPGA_lite/18.1/Relogio/Cpu.vhd Line: 41
+Info (12128): Elaborating entity "Banco_ULA" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA" File: C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd Line: 46
+Info (12128): Elaborating entity "BancoDeRegistradores" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco" File: C:/intelFPGA_lite/18.1/Relogio/Banco_ULA.vhd Line: 36
+Info (12128): Elaborating entity "ULA" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula" File: C:/intelFPGA_lite/18.1/Relogio/Banco_ULA.vhd Line: 46
+Warning (10492): VHDL Process Statement warning at ULA.vhd(38): signal "ai" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 38
+Warning (10492): VHDL Process Statement warning at ULA.vhd(38): signal "bi" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 38
+Warning (10492): VHDL Process Statement warning at ULA.vhd(40): signal "bi" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 40
+Warning (10492): VHDL Process Statement warning at ULA.vhd(42): signal "ai" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 42
+Warning (10492): VHDL Process Statement warning at ULA.vhd(42): signal "bi" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 42
+Warning (10631): VHDL Process Statement warning at ULA.vhd(30): inferring latch(es) for signal or variable "resultado", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Warning (10631): VHDL Process Statement warning at ULA.vhd(30): inferring latch(es) for signal or variable "zero", which holds its previous value in one or more paths through the process File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Info (10041): Inferred latch for "zero[0]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Info (10041): Inferred latch for "resultado[0]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Info (10041): Inferred latch for "resultado[1]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Info (10041): Inferred latch for "resultado[2]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Info (10041): Inferred latch for "resultado[3]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Info (10041): Inferred latch for "resultado[4]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Info (10041): Inferred latch for "resultado[5]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Info (10041): Inferred latch for "resultado[6]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Info (10041): Inferred latch for "resultado[7]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Info (12128): Elaborating entity "registrador" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero" File: C:/intelFPGA_lite/18.1/Relogio/Banco_ULA.vhd Line: 55
+Warning (10492): VHDL Process Statement warning at registrador.vhd(36): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Info (12128): Elaborating entity "PC" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc" File: C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd Line: 60
+Info (12128): Elaborating entity "MUX2_1" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|MUX2_1:Mux" File: C:/intelFPGA_lite/18.1/Relogio/PC.vhd Line: 26
+Info (12128): Elaborating entity "somadorGenerico" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|somadorGenerico:Somador" File: C:/intelFPGA_lite/18.1/Relogio/PC.vhd Line: 34
+Info (12128): Elaborating entity "registrador" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC" File: C:/intelFPGA_lite/18.1/Relogio/PC.vhd Line: 41
+Warning (10492): VHDL Process Statement warning at registrador.vhd(36): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Info (12128): Elaborating entity "MUX2_1" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|MUX2_1:Mux" File: C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd Line: 71
+Info (12128): Elaborating entity "UC" for hierarchy "Cpu:Cpu|UC:Uc" File: C:/intelFPGA_lite/18.1/Relogio/Cpu.vhd Line: 69
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276004): RAM logic "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco|registrador" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.1/Relogio/BancoDeRegistradores.vhd Line: 37
+    Info (276004): RAM logic "romMif:Rom|content" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.1/Relogio/romMif.vhd Line: 22
+Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[0]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[1]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[2]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[3]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[4]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[5]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[6]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[7]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "addrOut[1]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
+    Warning (13410): Pin "addrOut[3]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
+    Warning (13410): Pin "addrOut[4]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
+    Warning (13410): Pin "addrOut[5]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
+    Warning (13410): Pin "addrOut[6]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
+    Warning (13410): Pin "addrOut[7]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
+    Warning (13410): Pin "rd" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 12
+    Warning (13410): Pin "wr" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 13
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "dataIn[0]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
+    Warning (15610): No output dependent on input pin "dataIn[1]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
+    Warning (15610): No output dependent on input pin "dataIn[2]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
+    Warning (15610): No output dependent on input pin "dataIn[3]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
+    Warning (15610): No output dependent on input pin "dataIn[4]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
+    Warning (15610): No output dependent on input pin "dataIn[5]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
+    Warning (15610): No output dependent on input pin "dataIn[6]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
+    Warning (15610): No output dependent on input pin "dataIn[7]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
+Info (21057): Implemented 171 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 18 output pins
+    Info (21061): Implemented 144 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
+    Info: Peak virtual memory: 4799 megabytes
+    Info: Processing ended: Tue Oct 08 09:41:54 2019
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:28
+
+

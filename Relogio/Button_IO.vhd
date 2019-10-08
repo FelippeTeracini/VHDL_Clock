@@ -4,7 +4,7 @@ use ieee.numeric_std.all;
 
 entity Button_IO is
    port(
-      KEY          :   in std_logic_vector(3 downto 0);
+      ButInput     :   in std_logic_vector(3 downto 0);
 		
 		RD_ButMin    :   in std_logic;
 		RESET_ButMin :   in std_logic;
@@ -24,7 +24,7 @@ begin
 	RegMin : entity work.registrador
 		generic map (N => 1)
 		port map (
-			clk => KEY(0),
+			clk => not(ButInput(0)),
 			enable => '1',
 			reset	=> RESET_ButMin,
 			data(0) => '1',
@@ -35,7 +35,7 @@ begin
 	RegHrs : entity work.registrador
 		generic map (N => 1)
 		port map (
-			clk => KEY(1),
+			clk => not(ButInput(1)),
 			enable => '1',
 			reset	=> RESET_ButHrs,
 			data(0) => '1',

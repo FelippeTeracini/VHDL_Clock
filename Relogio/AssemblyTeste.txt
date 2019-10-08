@@ -1,0 +1,12 @@
+movi add_hour, $0
+store add_hour, $4
+
+teste:
+load add_hour, $2
+store add_hour, $4
+add add_hour, $1
+store add_hour, $4
+
+store hours, $2
+
+jmp teste

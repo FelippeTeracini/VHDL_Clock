@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Relogio
-Tue Oct 08 09:41:54 2019
+Tue Oct 08 12:05:20 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,25 +13,61 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
+  8. User-Specified and Inferred Latches
   9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: romMif:Rom
- 11. Parameter Settings for User Entity Instance: Cpu:Cpu
- 12. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC
- 13. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA
- 14. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco
- 15. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula
- 16. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero
- 17. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc
- 18. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|MUX2_1:Mux
- 19. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|somadorGenerico:Somador
- 20. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC
- 21. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|MUX2_1:Mux
- 22. Port Connectivity Checks: "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc"
- 23. Port Connectivity Checks: "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA"
- 24. Post-Synthesis Netlist Statistics for Top Partition
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_lento
+ 12. Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_lento|divisorGenerico:fazDivisaoInteiro
+ 13. Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_rapida
+ 14. Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_rapida|divisorGenerico:fazDivisaoInteiro
+ 15. Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|MUX2_1:Mux
+ 16. Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|registrador:Reg
+ 17. Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|tristate:triState
+ 18. Parameter Settings for User Entity Instance: romMif:Rom
+ 19. Parameter Settings for User Entity Instance: Cpu:Cpu
+ 20. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC
+ 21. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA
+ 22. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco
+ 23. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula
+ 24. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero
+ 25. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc
+ 26. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|MUX2_1:Mux
+ 27. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|somadorGenerico:Somador
+ 28. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC
+ 29. Parameter Settings for User Entity Instance: Cpu:Cpu|CpuNoUc:CPUnoUC|MUX2_1:Mux
+ 30. Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegSecond0
+ 31. Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegSecond1
+ 32. Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegMinute0
+ 33. Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegMinute1
+ 34. Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegHour0
+ 35. Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegHour1
+ 36. Parameter Settings for User Entity Instance: Button_IO:Buttons|registrador:RegMin
+ 37. Parameter Settings for User Entity Instance: Button_IO:Buttons|registrador:RegHrs
+ 38. Parameter Settings for User Entity Instance: Button_IO:Buttons|tristate:triStateMin
+ 39. Parameter Settings for User Entity Instance: Button_IO:Buttons|tristate:triStateHrs
+ 40. Parameter Settings for Inferred Entity Instance: BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Mod0
+ 41. Parameter Settings for Inferred Entity Instance: BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Div0
+ 42. Port Connectivity Checks: "Button_IO:Buttons|registrador:RegHrs"
+ 43. Port Connectivity Checks: "Button_IO:Buttons|registrador:RegMin"
+ 44. Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H5"
+ 45. Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H4"
+ 46. Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H3"
+ 47. Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H2"
+ 48. Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H1"
+ 49. Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H0"
+ 50. Port Connectivity Checks: "BCD:BCD|registrador:RegHour1"
+ 51. Port Connectivity Checks: "BCD:BCD|registrador:RegHour0"
+ 52. Port Connectivity Checks: "BCD:BCD|registrador:RegMinute1"
+ 53. Port Connectivity Checks: "BCD:BCD|registrador:RegMinute0"
+ 54. Port Connectivity Checks: "BCD:BCD|registrador:RegSecond1"
+ 55. Port Connectivity Checks: "BCD:BCD|registrador:RegSecond0"
+ 56. Port Connectivity Checks: "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc"
+ 57. Port Connectivity Checks: "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA"
+ 58. Port Connectivity Checks: "Cpu:Cpu"
+ 59. Port Connectivity Checks: "Base_de_tempo_bloco:BaseTempo|registrador:Reg"
+ 60. Post-Synthesis Netlist Statistics for Top Partition
+ 61. Elapsed Time Per Partition
+ 62. Analysis & Synthesis Messages
 
 
 
@@ -57,16 +93,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 08 09:41:54 2019       ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 08 12:05:19 2019       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; Relogio                                     ;
-; Top-level Entity Name              ; TopLevelTeste                               ;
+; Top-level Entity Name              ; TopLevel                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 136                                         ;
-;     Total combinational functions  ; 80                                          ;
-;     Dedicated logic registers      ; 70                                          ;
-; Total registers                    ; 70                                          ;
-; Total pins                         ; 27                                          ;
+; Total logic elements               ; 497                                         ;
+;     Total combinational functions  ; 430                                         ;
+;     Dedicated logic registers      ; 147                                         ;
+; Total registers                    ; 147                                         ;
+; Total pins                         ; 105                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -80,7 +116,7 @@ refer to the applicable agreement for further details.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; TopLevelTeste      ; Relogio            ;
+; Top-level entity name                                            ; TopLevel           ; Relogio            ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -177,85 +213,150 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                   ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                            ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
-; romMif.vhd                       ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/romMif.vhd               ;         ;
-; ULA.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/ULA.vhd                  ;         ;
-; somadorGenerico.vhd              ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/somadorGenerico.vhd      ;         ;
-; registrador.vhd                  ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/registrador.vhd          ;         ;
-; PC.vhd                           ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/PC.vhd                   ;         ;
-; MUX.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/MUX.vhd                  ;         ;
-; CpuNoUc.vhd                      ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd              ;         ;
-; Cpu.vhd                          ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/Cpu.vhd                  ;         ;
-; BancoDeRegistradores.vhd         ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/BancoDeRegistradores.vhd ;         ;
-; Banco_ULA.vhd                    ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/Banco_ULA.vhd            ;         ;
-; UC.vhd                           ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/UC.vhd                   ;         ;
-; TopLevelTeste.vhd                ; yes             ; User VHDL File  ; C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd        ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; romMif.vhd                       ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/romMif.vhd                                  ;         ;
+; ULA.vhd                          ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/ULA.vhd                                     ;         ;
+; somadorGenerico.vhd              ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/somadorGenerico.vhd                         ;         ;
+; registrador.vhd                  ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/registrador.vhd                             ;         ;
+; PC.vhd                           ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/PC.vhd                                      ;         ;
+; MUX.vhd                          ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/MUX.vhd                                     ;         ;
+; CpuNoUc.vhd                      ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd                                 ;         ;
+; Cpu.vhd                          ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/Cpu.vhd                                     ;         ;
+; BancoDeRegistradores.vhd         ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/BancoDeRegistradores.vhd                    ;         ;
+; Banco_ULA.vhd                    ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/Banco_ULA.vhd                               ;         ;
+; conversorHex7Seg.vhd             ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/conversorHex7Seg.vhd                        ;         ;
+; UC.vhd                           ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/UC.vhd                                      ;         ;
+; TopLevel.vhd                     ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd                                ;         ;
+; BCD.vhd                          ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/BCD.vhd                                     ;         ;
+; BinaryConverter.vhd              ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/BinaryConverter.vhd                         ;         ;
+; divisorGenerico.vhd              ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/divisorGenerico.vhd                         ;         ;
+; base_de_tempo.vhd                ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/base_de_tempo.vhd                           ;         ;
+; Base_de_tempo_bloco.vhd          ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/Base_de_tempo_bloco.vhd                     ;         ;
+; tristate.vhd                     ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/tristate.vhd                                ;         ;
+; Decoder_endereco.vhd             ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd                        ;         ;
+; Button_IO.vhd                    ; yes             ; User VHDL File               ; C:/intelFPGA_lite/18.1/Relogio/Button_IO.vhd                               ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
+; aglobal181.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/18.1/quartus/libraries/megafunctions/aglobal181.inc      ;         ;
+; db/lpm_divide_q9m.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.1/Relogio/db/lpm_divide_q9m.tdf                       ;         ;
+; db/sign_div_unsign_fkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.1/Relogio/db/sign_div_unsign_fkh.tdf                  ;         ;
+; db/alt_u_div_i4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.1/Relogio/db/alt_u_div_i4f.tdf                        ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.1/Relogio/db/add_sub_7pc.tdf                          ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.1/Relogio/db/add_sub_8pc.tdf                          ;         ;
+; db/lpm_divide_jhm.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.1/Relogio/db/lpm_divide_jhm.tdf                       ;         ;
+; db/sign_div_unsign_bkh.tdf       ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.1/Relogio/db/sign_div_unsign_bkh.tdf                  ;         ;
+; db/alt_u_div_a4f.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/intelFPGA_lite/18.1/Relogio/db/alt_u_div_a4f.tdf                        ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 136       ;
-;                                             ;           ;
-; Total combinational functions               ; 80        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 46        ;
-;     -- 3 input functions                    ; 15        ;
-;     -- <=2 input functions                  ; 19        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 68        ;
-;     -- arithmetic mode                      ; 12        ;
-;                                             ;           ;
-; Total registers                             ; 70        ;
-;     -- Dedicated logic registers            ; 70        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 27        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; Clk~input ;
-; Maximum fan-out                             ; 70        ;
-; Total fan-out                               ; 506       ;
-; Average fan-out                             ; 2.48      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 497            ;
+;                                             ;                ;
+; Total combinational functions               ; 430            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 210            ;
+;     -- 3 input functions                    ; 82             ;
+;     -- <=2 input functions                  ; 138            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 329            ;
+;     -- arithmetic mode                      ; 101            ;
+;                                             ;                ;
+; Total registers                             ; 147            ;
+;     -- Dedicated logic registers            ; 147            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 105            ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 144            ;
+; Total fan-out                               ; 1876           ;
+; Average fan-out                             ; 2.38           ;
++---------------------------------------------+----------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                            ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                ; Entity Name          ; Library Name ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+----------------------+--------------+
-; |TopLevelTeste                           ; 80 (0)              ; 70 (0)                    ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |TopLevelTeste                                                                     ; TopLevelTeste        ; work         ;
-;    |Cpu:Cpu|                             ; 71 (0)              ; 70 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu                                                             ; Cpu                  ; work         ;
-;       |CpuNoUc:CPUnoUC|                  ; 70 (0)              ; 70 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC                                             ; CpuNoUc              ; work         ;
-;          |Banco_ULA:BncULA|              ; 64 (0)              ; 64 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA                            ; Banco_ULA            ; work         ;
-;             |BancoDeRegistradores:Banco| ; 48 (48)             ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco ; BancoDeRegistradores ; work         ;
-;             |ULA:Ula|                    ; 16 (16)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula                    ; ULA                  ; work         ;
-;          |PC:Pc|                         ; 6 (0)               ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc                                       ; PC                   ; work         ;
-;             |registrador:PC|             ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC                        ; registrador          ; work         ;
-;       |UC:Uc|                            ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|Cpu:Cpu|UC:Uc                                                       ; UC                   ; work         ;
-;    |romMif:Rom|                          ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevelTeste|romMif:Rom                                                          ; romMif               ; work         ;
-+------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+----------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                               ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                               ; Entity Name          ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; |TopLevel                                    ; 430 (0)             ; 147 (0)                   ; 0           ; 0            ; 0       ; 0         ; 105  ; 0            ; |TopLevel                                                                                                                                         ; TopLevel             ; work         ;
+;    |BCD:BCD|                                 ; 187 (0)             ; 24 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD                                                                                                                                 ; BCD                  ; work         ;
+;       |BinaryConverter:BinaryConverter|      ; 133 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|BinaryConverter:BinaryConverter                                                                                                 ; BinaryConverter      ; work         ;
+;          |lpm_divide:Div0|                   ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Div0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_jhm:auto_generated|  ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Div0|lpm_divide_jhm:auto_generated                                                   ; lpm_divide_jhm       ; work         ;
+;                |sign_div_unsign_bkh:divider| ; 56 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider                       ; sign_div_unsign_bkh  ; work         ;
+;                   |alt_u_div_a4f:divider|    ; 56 (56)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Div0|lpm_divide_jhm:auto_generated|sign_div_unsign_bkh:divider|alt_u_div_a4f:divider ; alt_u_div_a4f        ; work         ;
+;          |lpm_divide:Mod0|                   ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Mod0                                                                                 ; lpm_divide           ; work         ;
+;             |lpm_divide_q9m:auto_generated|  ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Mod0|lpm_divide_q9m:auto_generated                                                   ; lpm_divide_q9m       ; work         ;
+;                |sign_div_unsign_fkh:divider| ; 77 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider                       ; sign_div_unsign_fkh  ; work         ;
+;                   |alt_u_div_i4f:divider|    ; 77 (77)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Mod0|lpm_divide_q9m:auto_generated|sign_div_unsign_fkh:divider|alt_u_div_i4f:divider ; alt_u_div_i4f        ; work         ;
+;       |conversorHex7Seg:H0|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|conversorHex7Seg:H0                                                                                                             ; conversorHex7Seg     ; work         ;
+;       |conversorHex7Seg:H1|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|conversorHex7Seg:H1                                                                                                             ; conversorHex7Seg     ; work         ;
+;       |conversorHex7Seg:H2|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|conversorHex7Seg:H2                                                                                                             ; conversorHex7Seg     ; work         ;
+;       |conversorHex7Seg:H3|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|conversorHex7Seg:H3                                                                                                             ; conversorHex7Seg     ; work         ;
+;       |conversorHex7Seg:H4|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|conversorHex7Seg:H4                                                                                                             ; conversorHex7Seg     ; work         ;
+;       |conversorHex7Seg:H5|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|conversorHex7Seg:H5                                                                                                             ; conversorHex7Seg     ; work         ;
+;       |registrador:RegHour0|                 ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|registrador:RegHour0                                                                                                            ; registrador          ; work         ;
+;       |registrador:RegHour1|                 ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|registrador:RegHour1                                                                                                            ; registrador          ; work         ;
+;       |registrador:RegMinute0|               ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|registrador:RegMinute0                                                                                                          ; registrador          ; work         ;
+;       |registrador:RegMinute1|               ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|registrador:RegMinute1                                                                                                          ; registrador          ; work         ;
+;       |registrador:RegSecond0|               ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|registrador:RegSecond0                                                                                                          ; registrador          ; work         ;
+;       |registrador:RegSecond1|               ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|BCD:BCD|registrador:RegSecond1                                                                                                          ; registrador          ; work         ;
+;    |Base_de_tempo_bloco:BaseTempo|           ; 87 (0)              ; 50 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Base_de_tempo_bloco:BaseTempo                                                                                                           ; Base_de_tempo_bloco  ; work         ;
+;       |Base_de_tempo:base_lento|             ; 47 (0)              ; 26 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_lento                                                                                  ; Base_de_tempo        ; work         ;
+;          |divisorGenerico:fazDivisaoInteiro| ; 47 (47)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_lento|divisorGenerico:fazDivisaoInteiro                                                ; divisorGenerico      ; work         ;
+;       |Base_de_tempo:base_rapida|            ; 39 (0)              ; 23 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_rapida                                                                                 ; Base_de_tempo        ; work         ;
+;          |divisorGenerico:fazDivisaoInteiro| ; 39 (39)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_rapida|divisorGenerico:fazDivisaoInteiro                                               ; divisorGenerico      ; work         ;
+;       |MUX2_1:Mux|                           ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Base_de_tempo_bloco:BaseTempo|MUX2_1:Mux                                                                                                ; MUX2_1               ; work         ;
+;       |registrador:Reg|                      ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Base_de_tempo_bloco:BaseTempo|registrador:Reg                                                                                           ; registrador          ; work         ;
+;    |Button_IO:Buttons|                       ; 0 (0)               ; 2 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Button_IO:Buttons                                                                                                                       ; Button_IO            ; work         ;
+;       |registrador:RegHrs|                   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Button_IO:Buttons|registrador:RegHrs                                                                                                    ; registrador          ; work         ;
+;       |registrador:RegMin|                   ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Button_IO:Buttons|registrador:RegMin                                                                                                    ; registrador          ; work         ;
+;    |Cpu:Cpu|                                 ; 100 (0)             ; 71 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Cpu:Cpu                                                                                                                                 ; Cpu                  ; work         ;
+;       |CpuNoUc:CPUnoUC|                      ; 96 (1)              ; 71 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC                                                                                                                 ; CpuNoUc              ; work         ;
+;          |Banco_ULA:BncULA|                  ; 81 (0)              ; 65 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA                                                                                                ; Banco_ULA            ; work         ;
+;             |BancoDeRegistradores:Banco|     ; 50 (50)             ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco                                                                     ; BancoDeRegistradores ; work         ;
+;             |ULA:Ula|                        ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula                                                                                        ; ULA                  ; work         ;
+;             |registrador:Zero|               ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero                                                                               ; registrador          ; work         ;
+;          |MUX2_1:Mux|                        ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|MUX2_1:Mux                                                                                                      ; MUX2_1               ; work         ;
+;          |PC:Pc|                             ; 6 (0)               ; 6 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc                                                                                                           ; PC                   ; work         ;
+;             |registrador:PC|                 ; 6 (6)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC                                                                                            ; registrador          ; work         ;
+;       |UC:Uc|                                ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Cpu:Cpu|UC:Uc                                                                                                                           ; UC                   ; work         ;
+;    |Decoder_endereco:DecoderEndereco|        ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|Decoder_endereco:DecoderEndereco                                                                                                        ; Decoder_endereco     ; work         ;
+;    |romMif:Rom|                              ; 45 (45)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |TopLevel|romMif:Rom                                                                                                                              ; romMif               ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                ;
-+---------------------------------------------------------------------+---------------------------------------------+
-; Register name                                                       ; Reason for Removal                          ;
-+---------------------------------------------------------------------+---------------------------------------------+
-; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero|output[0] ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 1                               ;                                             ;
-+---------------------------------------------------------------------+---------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                                            ;
++---------------------------------------------------------------+-------------------------------------------------------+------------------------+
+; Latch Name                                                    ; Latch Enable Signal                                   ; Free of Timing Hazards ;
++---------------------------------------------------------------+-------------------------------------------------------+------------------------+
+; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|zero[0]      ; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux9 ; yes                    ;
+; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[1] ; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux0 ; yes                    ;
+; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[3] ; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux0 ; yes                    ;
+; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[0] ; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux0 ; yes                    ;
+; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[2] ; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux0 ; yes                    ;
+; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[7] ; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux0 ; yes                    ;
+; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[6] ; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux0 ; yes                    ;
+; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[4] ; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux0 ; yes                    ;
+; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[5] ; Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux0 ; yes                    ;
+; Number of user-specified and inferred latches = 9             ;                                                       ;                        ;
++---------------------------------------------------------------+-------------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -263,14 +364,94 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 70    ;
+; Total registers                              ; 147   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Synchronous Load   ; 6     ;
+; Number of registers using Asynchronous Clear ; 3     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 64    ;
+; Number of registers using Clock Enable       ; 88    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux2 ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|Mux5 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_lento ;
++----------------+----------+-------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                    ;
++----------------+----------+-------------------------------------------------------------------------+
+; n              ; 25000000 ; Signed Integer                                                          ;
++----------------+----------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_lento|divisorGenerico:fazDivisaoInteiro ;
++----------------+----------+-----------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                                                                      ;
++----------------+----------+-----------------------------------------------------------------------------------------------------------+
+; divisor        ; 25000000 ; Signed Integer                                                                                            ;
++----------------+----------+-----------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_rapida ;
++----------------+---------+---------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                      ;
++----------------+---------+---------------------------------------------------------------------------+
+; n              ; 2500000 ; Signed Integer                                                            ;
++----------------+---------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_rapida|divisorGenerico:fazDivisaoInteiro ;
++----------------+---------+-------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value   ; Type                                                                                                        ;
++----------------+---------+-------------------------------------------------------------------------------------------------------------+
+; divisor        ; 2500000 ; Signed Integer                                                                                              ;
++----------------+---------+-------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|MUX2_1:Mux ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; n              ; 1     ; Signed Integer                                               ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|registrador:Reg ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; n              ; 1     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Base_de_tempo_bloco:BaseTempo|tristate:triState ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; n              ; 1     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +---------------------------------------------------------+
@@ -402,6 +583,292 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegSecond0 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; n              ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegSecond1 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; n              ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegMinute0 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; n              ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegMinute1 ;
++----------------+-------+----------------------------------------------------+
+; Parameter Name ; Value ; Type                                               ;
++----------------+-------+----------------------------------------------------+
+; n              ; 4     ; Signed Integer                                     ;
++----------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegHour0 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 4     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: BCD:BCD|registrador:RegHour1 ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; n              ; 4     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Button_IO:Buttons|registrador:RegMin ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 1     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Button_IO:Buttons|registrador:RegHrs ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; n              ; 1     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Button_IO:Buttons|tristate:triStateMin ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; n              ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Button_IO:Buttons|tristate:triStateHrs ;
++----------------+-------+------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                       ;
++----------------+-------+------------------------------------------------------------+
+; n              ; 1     ; Signed Integer                                             ;
++----------------+-------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                           ;
++------------------------+----------------+----------------------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                                        ;
+; LPM_WIDTHD             ; 8              ; Untyped                                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                        ;
+; CBXI_PARAMETER         ; lpm_divide_q9m ; Untyped                                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                 ;
++------------------------+----------------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                           ;
++------------------------+----------------+----------------------------------------------------------------+
+; LPM_WIDTHN             ; 8              ; Untyped                                                        ;
+; LPM_WIDTHD             ; 4              ; Untyped                                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                        ;
+; CBXI_PARAMETER         ; lpm_divide_jhm ; Untyped                                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                 ;
++------------------------+----------------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "Button_IO:Buttons|registrador:RegHrs" ;
++--------+-------+----------+--------------------------------------+
+; Port   ; Type  ; Severity ; Details                              ;
++--------+-------+----------+--------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                         ;
+; data   ; Input ; Info     ; Stuck at VCC                         ;
++--------+-------+----------+--------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "Button_IO:Buttons|registrador:RegMin" ;
++--------+-------+----------+--------------------------------------+
+; Port   ; Type  ; Severity ; Details                              ;
++--------+-------+----------+--------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                         ;
+; data   ; Input ; Info     ; Stuck at VCC                         ;
++--------+-------+----------+--------------------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H5" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND              ;
+; negativo ; Input ; Info     ; Stuck at GND              ;
+; overflow ; Input ; Info     ; Stuck at GND              ;
++----------+-------+----------+---------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H4" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND              ;
+; negativo ; Input ; Info     ; Stuck at GND              ;
+; overflow ; Input ; Info     ; Stuck at GND              ;
++----------+-------+----------+---------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H3" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND              ;
+; negativo ; Input ; Info     ; Stuck at GND              ;
+; overflow ; Input ; Info     ; Stuck at GND              ;
++----------+-------+----------+---------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H2" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND              ;
+; negativo ; Input ; Info     ; Stuck at GND              ;
+; overflow ; Input ; Info     ; Stuck at GND              ;
++----------+-------+----------+---------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H1" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND              ;
+; negativo ; Input ; Info     ; Stuck at GND              ;
+; overflow ; Input ; Info     ; Stuck at GND              ;
++----------+-------+----------+---------------------------+
+
+
++---------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|conversorHex7Seg:H0" ;
++----------+-------+----------+---------------------------+
+; Port     ; Type  ; Severity ; Details                   ;
++----------+-------+----------+---------------------------+
+; apaga    ; Input ; Info     ; Stuck at GND              ;
+; negativo ; Input ; Info     ; Stuck at GND              ;
+; overflow ; Input ; Info     ; Stuck at GND              ;
++----------+-------+----------+---------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|registrador:RegHour1" ;
++-------+-------+----------+-------------------------------+
+; Port  ; Type  ; Severity ; Details                       ;
++-------+-------+----------+-------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                  ;
++-------+-------+----------+-------------------------------+
+
+
++----------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|registrador:RegHour0" ;
++-------+-------+----------+-------------------------------+
+; Port  ; Type  ; Severity ; Details                       ;
++-------+-------+----------+-------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                  ;
++-------+-------+----------+-------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|registrador:RegMinute1" ;
++-------+-------+----------+---------------------------------+
+; Port  ; Type  ; Severity ; Details                         ;
++-------+-------+----------+---------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                    ;
++-------+-------+----------+---------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|registrador:RegMinute0" ;
++-------+-------+----------+---------------------------------+
+; Port  ; Type  ; Severity ; Details                         ;
++-------+-------+----------+---------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                    ;
++-------+-------+----------+---------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|registrador:RegSecond1" ;
++-------+-------+----------+---------------------------------+
+; Port  ; Type  ; Severity ; Details                         ;
++-------+-------+----------+---------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                    ;
++-------+-------+----------+---------------------------------+
+
+
++------------------------------------------------------------+
+; Port Connectivity Checks: "BCD:BCD|registrador:RegSecond0" ;
++-------+-------+----------+---------------------------------+
+; Port  ; Type  ; Severity ; Details                         ;
++-------+-------+----------+---------------------------------+
+; reset ; Input ; Info     ; Stuck at GND                    ;
++-------+-------+----------+---------------------------------+
+
+
 +-----------------------------------------------------------+
 ; Port Connectivity Checks: "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc" ;
 +-----------------+-------+----------+----------------------+
@@ -423,28 +890,49 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+---------------------------------------+
 
 
++------------------------------------------------+
+; Port Connectivity Checks: "Cpu:Cpu"            ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; datain[7..1] ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "Base_de_tempo_bloco:BaseTempo|registrador:Reg" ;
++--------+-------+----------+-----------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                       ;
++--------+-------+----------+-----------------------------------------------+
+; enable ; Input ; Info     ; Stuck at VCC                                  ;
+; data   ; Input ; Info     ; Stuck at VCC                                  ;
++--------+-------+----------+-----------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 27                          ;
-; cycloneiii_ff         ; 70                          ;
-;     ENA               ; 64                          ;
-;     plain             ; 6                           ;
-; cycloneiii_lcell_comb ; 81                          ;
-;     arith             ; 12                          ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 2                           ;
-;     normal            ; 69                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 13                          ;
-;         4 data inputs ; 46                          ;
+; boundary_port         ; 105                         ;
+; cycloneiii_ff         ; 147                         ;
+;     CLR               ; 3                           ;
+;     ENA               ; 88                          ;
+;     SLD               ; 6                           ;
+;     plain             ; 50                          ;
+; cycloneiii_lcell_comb ; 432                         ;
+;     arith             ; 101                         ;
+;         2 data inputs ; 57                          ;
+;         3 data inputs ; 44                          ;
+;     normal            ; 331                         ;
+;         0 data inputs ; 12                          ;
+;         1 data inputs ; 16                          ;
+;         2 data inputs ; 55                          ;
+;         3 data inputs ; 38                          ;
+;         4 data inputs ; 210                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.70                        ;
-; Average LUT depth     ; 5.60                        ;
+; Max LUT depth         ; 18.50                       ;
+; Average LUT depth     ; 9.34                        ;
 +-----------------------+-----------------------------+
 
 
@@ -453,7 +941,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -463,7 +951,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Oct 08 09:41:41 2019
+    Info: Processing started: Tue Oct 08 12:05:04 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Relogio -c Relogio
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -562,10 +1050,20 @@ Info (12021): Found 2 design units, including 1 entities, in source file button_
 Info (12021): Found 2 design units, including 1 entities, in source file toplevelteste.vhd
     Info (12022): Found design unit 1: TopLevelTeste-comportamento File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 18
     Info (12023): Found entity 1: TopLevelTeste File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 5
-Info (12127): Elaborating entity "TopLevelTeste" for the top level hierarchy
-Info (12128): Elaborating entity "romMif" for hierarchy "romMif:Rom" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 25
+Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at TopLevel.vhd(11): used explicit default value for signal "LEDG" because signal was never assigned a value File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 11
+Info (12128): Elaborating entity "Base_de_tempo_bloco" for hierarchy "Base_de_tempo_bloco:BaseTempo" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 52
+Info (12128): Elaborating entity "Base_de_tempo" for hierarchy "Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_lento" File: C:/intelFPGA_lite/18.1/Relogio/Base_de_tempo_bloco.vhd Line: 22
+Info (12129): Elaborating entity "divisorGenerico" using architecture "A:divinteiro" for hierarchy "Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_lento|divisorGenerico:fazDivisaoInteiro" File: C:/intelFPGA_lite/18.1/Relogio/base_de_tempo.vhd Line: 17
+Info (12128): Elaborating entity "Base_de_tempo" for hierarchy "Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_rapida" File: C:/intelFPGA_lite/18.1/Relogio/Base_de_tempo_bloco.vhd Line: 26
+Info (12129): Elaborating entity "divisorGenerico" using architecture "A:divinteiro" for hierarchy "Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_rapida|divisorGenerico:fazDivisaoInteiro" File: C:/intelFPGA_lite/18.1/Relogio/base_de_tempo.vhd Line: 17
+Info (12128): Elaborating entity "MUX2_1" for hierarchy "Base_de_tempo_bloco:BaseTempo|MUX2_1:Mux" File: C:/intelFPGA_lite/18.1/Relogio/Base_de_tempo_bloco.vhd Line: 30
+Info (12128): Elaborating entity "registrador" for hierarchy "Base_de_tempo_bloco:BaseTempo|registrador:Reg" File: C:/intelFPGA_lite/18.1/Relogio/Base_de_tempo_bloco.vhd Line: 40
+Warning (10492): VHDL Process Statement warning at registrador.vhd(36): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Info (12128): Elaborating entity "tristate" for hierarchy "Base_de_tempo_bloco:BaseTempo|tristate:triState" File: C:/intelFPGA_lite/18.1/Relogio/Base_de_tempo_bloco.vhd Line: 52
+Info (12128): Elaborating entity "romMif" for hierarchy "romMif:Rom" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 62
 Warning (10541): VHDL Signal Declaration warning at romMif.vhd(22): used implicit default value for signal "content" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/intelFPGA_lite/18.1/Relogio/romMif.vhd Line: 22
-Info (12128): Elaborating entity "Cpu" for hierarchy "Cpu:Cpu" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 35
+Info (12128): Elaborating entity "Cpu" for hierarchy "Cpu:Cpu" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 72
 Info (12128): Elaborating entity "CpuNoUc" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC" File: C:/intelFPGA_lite/18.1/Relogio/Cpu.vhd Line: 41
 Info (12128): Elaborating entity "Banco_ULA" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA" File: C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd Line: 46
 Info (12128): Elaborating entity "BancoDeRegistradores" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco" File: C:/intelFPGA_lite/18.1/Relogio/Banco_ULA.vhd Line: 36
@@ -586,8 +1084,6 @@ Info (10041): Inferred latch for "resultado[4]" at ULA.vhd(30) File: C:/intelFPG
 Info (10041): Inferred latch for "resultado[5]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
 Info (10041): Inferred latch for "resultado[6]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
 Info (10041): Inferred latch for "resultado[7]" at ULA.vhd(30) File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
-Info (12128): Elaborating entity "registrador" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero" File: C:/intelFPGA_lite/18.1/Relogio/Banco_ULA.vhd Line: 55
-Warning (10492): VHDL Process Statement warning at registrador.vhd(36): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
 Info (12128): Elaborating entity "PC" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc" File: C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd Line: 60
 Info (12128): Elaborating entity "MUX2_1" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|MUX2_1:Mux" File: C:/intelFPGA_lite/18.1/Relogio/PC.vhd Line: 26
 Info (12128): Elaborating entity "somadorGenerico" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|somadorGenerico:Somador" File: C:/intelFPGA_lite/18.1/Relogio/PC.vhd Line: 34
@@ -595,46 +1091,141 @@ Info (12128): Elaborating entity "registrador" for hierarchy "Cpu:Cpu|CpuNoUc:CP
 Warning (10492): VHDL Process Statement warning at registrador.vhd(36): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
 Info (12128): Elaborating entity "MUX2_1" for hierarchy "Cpu:Cpu|CpuNoUc:CPUnoUC|MUX2_1:Mux" File: C:/intelFPGA_lite/18.1/Relogio/CpuNoUc.vhd Line: 71
 Info (12128): Elaborating entity "UC" for hierarchy "Cpu:Cpu|UC:Uc" File: C:/intelFPGA_lite/18.1/Relogio/Cpu.vhd Line: 69
+Info (12128): Elaborating entity "Decoder_endereco" for hierarchy "Decoder_endereco:DecoderEndereco" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 93
+Warning (10492): VHDL Process Statement warning at Decoder_endereco.vhd(36): signal "WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 36
+Warning (10492): VHDL Process Statement warning at Decoder_endereco.vhd(48): signal "WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 48
+Warning (10492): VHDL Process Statement warning at Decoder_endereco.vhd(60): signal "WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 60
+Warning (10492): VHDL Process Statement warning at Decoder_endereco.vhd(72): signal "RD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 72
+Warning (10492): VHDL Process Statement warning at Decoder_endereco.vhd(73): signal "WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 73
+Warning (10492): VHDL Process Statement warning at Decoder_endereco.vhd(84): signal "RD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 84
+Warning (10492): VHDL Process Statement warning at Decoder_endereco.vhd(85): signal "WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 85
+Warning (10492): VHDL Process Statement warning at Decoder_endereco.vhd(96): signal "RD" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 96
+Warning (10492): VHDL Process Statement warning at Decoder_endereco.vhd(97): signal "WR" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/Decoder_endereco.vhd Line: 97
+Info (12128): Elaborating entity "BCD" for hierarchy "BCD:BCD" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 112
+Info (12128): Elaborating entity "BinaryConverter" for hierarchy "BCD:BCD|BinaryConverter:BinaryConverter" File: C:/intelFPGA_lite/18.1/Relogio/BCD.vhd Line: 29
+Info (12128): Elaborating entity "registrador" for hierarchy "BCD:BCD|registrador:RegSecond0" File: C:/intelFPGA_lite/18.1/Relogio/BCD.vhd Line: 36
+Warning (10492): VHDL Process Statement warning at registrador.vhd(36): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Info (12128): Elaborating entity "conversorHex7Seg" for hierarchy "BCD:BCD|conversorHex7Seg:H0" File: C:/intelFPGA_lite/18.1/Relogio/BCD.vhd Line: 109
+Info (12128): Elaborating entity "Button_IO" for hierarchy "Button_IO:Buttons" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 128
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer Base_de_tempo_bloco:BaseTempo|MUX2_1:Mux|Y[0] File: C:/intelFPGA_lite/18.1/Relogio/MUX.vhd Line: 20
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13048): Converted tri-state node "dataIn[0]" into a selector File: C:/intelFPGA_lite/18.1/Relogio/MUX.vhd Line: 20
 Info (276014): Found 2 instances of uninferred RAM logic
-    Info (276004): RAM logic "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco|registrador" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.1/Relogio/BancoDeRegistradores.vhd Line: 37
     Info (276004): RAM logic "romMif:Rom|content" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.1/Relogio/romMif.vhd Line: 22
-Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[0]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
-Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[1]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
-Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[2]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
-Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[3]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
-Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[4]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
-Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[5]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
-Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[6]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
-Warning (14026): LATCH primitive "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[7]" is permanently enabled File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+    Info (276004): RAM logic "Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco|registrador" is uninferred due to inappropriate RAM size File: C:/intelFPGA_lite/18.1/Relogio/BancoDeRegistradores.vhd Line: 37
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BCD:BCD|BinaryConverter:BinaryConverter|Mod0" File: C:/intelFPGA_lite/18.1/Relogio/BinaryConverter.vhd Line: 19
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "BCD:BCD|BinaryConverter:BinaryConverter|Div0" File: C:/intelFPGA_lite/18.1/Relogio/BinaryConverter.vhd Line: 18
+Info (12130): Elaborated megafunction instantiation "BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Mod0" File: C:/intelFPGA_lite/18.1/Relogio/BinaryConverter.vhd Line: 19
+Info (12133): Instantiated megafunction "BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Mod0" with the following parameter: File: C:/intelFPGA_lite/18.1/Relogio/BinaryConverter.vhd Line: 19
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "8"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_q9m.tdf
+    Info (12023): Found entity 1: lpm_divide_q9m File: C:/intelFPGA_lite/18.1/Relogio/db/lpm_divide_q9m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_fkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_fkh File: C:/intelFPGA_lite/18.1/Relogio/db/sign_div_unsign_fkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_i4f.tdf
+    Info (12023): Found entity 1: alt_u_div_i4f File: C:/intelFPGA_lite/18.1/Relogio/db/alt_u_div_i4f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: C:/intelFPGA_lite/18.1/Relogio/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: C:/intelFPGA_lite/18.1/Relogio/db/add_sub_8pc.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Div0" File: C:/intelFPGA_lite/18.1/Relogio/BinaryConverter.vhd Line: 18
+Info (12133): Instantiated megafunction "BCD:BCD|BinaryConverter:BinaryConverter|lpm_divide:Div0" with the following parameter: File: C:/intelFPGA_lite/18.1/Relogio/BinaryConverter.vhd Line: 18
+    Info (12134): Parameter "LPM_WIDTHN" = "8"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_jhm.tdf
+    Info (12023): Found entity 1: lpm_divide_jhm File: C:/intelFPGA_lite/18.1/Relogio/db/lpm_divide_jhm.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_bkh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_bkh File: C:/intelFPGA_lite/18.1/Relogio/db/sign_div_unsign_bkh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a4f.tdf
+    Info (12023): Found entity 1: alt_u_div_a4f File: C:/intelFPGA_lite/18.1/Relogio/db/alt_u_div_a4f.tdf Line: 26
+Warning (13012): Latch Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|zero[0] has unsafe behavior File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[5] File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Warning (13012): Latch Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[1] has unsafe behavior File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[1] File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Warning (13012): Latch Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[3] has unsafe behavior File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[1] File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Warning (13012): Latch Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[0] has unsafe behavior File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[1] File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Warning (13012): Latch Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[2] has unsafe behavior File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[1] File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Warning (13012): Latch Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[7] has unsafe behavior File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[4] File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Warning (13012): Latch Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[6] has unsafe behavior File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[4] File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Warning (13012): Latch Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[4] has unsafe behavior File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[1] File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
+Warning (13012): Latch Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula|resultado[5] has unsafe behavior File: C:/intelFPGA_lite/18.1/Relogio/ULA.vhd Line: 30
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[1] File: C:/intelFPGA_lite/18.1/Relogio/registrador.vhd Line: 36
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "addrOut[1]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
-    Warning (13410): Pin "addrOut[3]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
-    Warning (13410): Pin "addrOut[4]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
-    Warning (13410): Pin "addrOut[5]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
-    Warning (13410): Pin "addrOut[6]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
-    Warning (13410): Pin "addrOut[7]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 11
-    Warning (13410): Pin "rd" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 12
-    Warning (13410): Pin "wr" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 13
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 10
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 10
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 10
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 10
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 10
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 10
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 10
+    Warning (13410): Pin "LEDR[16]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 10
+    Warning (13410): Pin "LEDR[17]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 10
+    Warning (13410): Pin "LEDG[0]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 11
+    Warning (13410): Pin "LEDG[1]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 11
+    Warning (13410): Pin "LEDG[2]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 11
+    Warning (13410): Pin "LEDG[3]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 11
+    Warning (13410): Pin "LEDG[4]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 11
+    Warning (13410): Pin "LEDG[5]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 11
+    Warning (13410): Pin "LEDG[6]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 11
+    Warning (13410): Pin "LEDG[7]" is stuck at GND File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 11
+    Warning (13410): Pin "HEX0[0]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX0[2]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX0[3]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX0[4]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX0[5]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "dataIn[0]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
-    Warning (15610): No output dependent on input pin "dataIn[1]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
-    Warning (15610): No output dependent on input pin "dataIn[2]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
-    Warning (15610): No output dependent on input pin "dataIn[3]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
-    Warning (15610): No output dependent on input pin "dataIn[4]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
-    Warning (15610): No output dependent on input pin "dataIn[5]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
-    Warning (15610): No output dependent on input pin "dataIn[6]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
-    Warning (15610): No output dependent on input pin "dataIn[7]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevelTeste.vhd Line: 9
-Info (21057): Implemented 171 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 18 output pins
-    Info (21061): Implemented 144 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
-    Info: Peak virtual memory: 4799 megabytes
-    Info: Processing ended: Tue Oct 08 09:41:54 2019
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:28
+Warning (21074): Design contains 19 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 7
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 7
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[10]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[11]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[12]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[13]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[15]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[16]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+    Warning (15610): No output dependent on input pin "SW[17]" File: C:/intelFPGA_lite/18.1/Relogio/TopLevel.vhd Line: 8
+Info (21057): Implemented 614 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 82 output pins
+    Info (21061): Implemented 509 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 96 warnings
+    Info: Peak virtual memory: 4814 megabytes
+    Info: Processing ended: Tue Oct 08 12:05:20 2019
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:31
 
 

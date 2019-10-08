@@ -32,7 +32,7 @@ BEGIN
 	
 	BEGIN
 		CASE(ADDR) IS
-			WHEN "00000001" =>
+			WHEN "00000101" =>
 			EnableSec <= WR;
 			
 			EnableMin <= '0';
@@ -44,7 +44,7 @@ BEGIN
 			RD_ButHrs <= '0';
 			RESET_ButHrs <= '0';
 	
-			WHEN "00000010" =>
+			WHEN "00000011" =>
 			EnableMin <= WR;
 			
 			EnableSec <= '0';
@@ -56,7 +56,7 @@ BEGIN
 			RD_ButHrs <= '0';
 			RESET_ButHrs <= '0';
 			
-			WHEN "00000011" =>
+			WHEN "00000100" =>
 			EnableHrs <= WR;
 			
 			EnableMin <= '0';
@@ -68,43 +68,20 @@ BEGIN
 			RD_ButHrs <= '0';
 			RESET_ButHrs <= '0';
 			
-			WHEN "00000100" =>
+			WHEN "00000000" =>
 			RD_BaseTempo <= RD;
-			
-			EnableMin <= '0';
-			EnableSec <= '0';
-			EnableHrs <= '0';
-			RESET_BaseTempo <= '0';
-			RD_ButMin <= '0';
-			RESET_ButMin <= '0';
-			RD_ButHrs <= '0';
-			RESET_ButHrs <= '0';
-			
-			WHEN "00000101" =>
 			RESET_BaseTempo <= WR;
 			
 			EnableMin <= '0';
 			EnableSec <= '0';
 			EnableHrs <= '0';
-			RD_BaseTempo <= '0';
 			RD_ButMin <= '0';
 			RESET_ButMin <= '0';
 			RD_ButHrs <= '0';
 			RESET_ButHrs <= '0';
 			
-			WHEN "00000110" =>
+			WHEN "00000001" =>
 			RD_ButMin <= RD;
-			
-			EnableMin <= '0';
-			EnableSec <= '0';
-			EnableHrs <= '0';
-			RESET_BaseTempo <= '0';
-			RD_BaseTempo <= '0';
-			RESET_ButMin <= '0';
-			RD_ButHrs <= '0';
-			RESET_ButHrs <= '0';
-			
-			WHEN "00000111" =>
 			RESET_ButMin <= WR;
 			
 			EnableMin <= '0';
@@ -112,23 +89,11 @@ BEGIN
 			EnableHrs <= '0';
 			RESET_BaseTempo <= '0';
 			RD_BaseTempo <= '0';
-			RD_ButMin <= '0';
 			RD_ButHrs <= '0';
 			RESET_ButHrs <= '0';
 			
-			WHEN "00001000" =>
+			WHEN "00000010" =>
 			RD_ButHrs <= RD;
-			
-			EnableMin <= '0';
-			EnableSec <= '0';
-			EnableHrs <= '0';
-			RESET_BaseTempo <= '0';
-			RD_BaseTempo <= '0';
-			RESET_ButMin <= '0';
-			RD_ButMin <= '0';
-			RESET_ButHrs <= '0';
-			
-			WHEN "00001001" =>
 			RESET_ButHrs <= WR;
 			
 			EnableMin <= '0';
@@ -138,7 +103,6 @@ BEGIN
 			RD_BaseTempo <= '0';
 			RESET_ButMin <= '0';
 			RD_ButMin <= '0';
-			RD_ButHrs <= '0';
 			
 			WHEN OTHERS =>
 			EnableSec <= '0';

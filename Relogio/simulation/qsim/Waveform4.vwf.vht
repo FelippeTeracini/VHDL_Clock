@@ -18,7 +18,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "10/08/2019 09:42:40"
+-- Generated on "10/08/2019 09:50:07"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          TopLevelTeste
 -- 
@@ -66,9 +66,9 @@ t_prcs_Clk: PROCESS
 BEGIN
 LOOP
 	Clk <= '0';
-	WAIT FOR 20000 ps;
+	WAIT FOR 10000 ps;
 	Clk <= '1';
-	WAIT FOR 20000 ps;
+	WAIT FOR 10000 ps;
 	IF (NOW >= 1000000 ps) THEN WAIT; END IF;
 END LOOP;
 END PROCESS t_prcs_Clk;
@@ -76,11 +76,19 @@ END PROCESS t_prcs_Clk;
 t_prcs_dataIn_7: PROCESS
 BEGIN
 	dataIn(7) <= '0';
+	WAIT FOR 40000 ps;
+	dataIn(7) <= '1';
+	WAIT FOR 170000 ps;
+	dataIn(7) <= '0';
 WAIT;
 END PROCESS t_prcs_dataIn_7;
 -- dataIn[6]
 t_prcs_dataIn_6: PROCESS
 BEGIN
+	dataIn(6) <= '0';
+	WAIT FOR 40000 ps;
+	dataIn(6) <= '1';
+	WAIT FOR 170000 ps;
 	dataIn(6) <= '0';
 WAIT;
 END PROCESS t_prcs_dataIn_6;
@@ -88,11 +96,19 @@ END PROCESS t_prcs_dataIn_6;
 t_prcs_dataIn_5: PROCESS
 BEGIN
 	dataIn(5) <= '0';
+	WAIT FOR 40000 ps;
+	dataIn(5) <= '1';
+	WAIT FOR 170000 ps;
+	dataIn(5) <= '0';
 WAIT;
 END PROCESS t_prcs_dataIn_5;
 -- dataIn[4]
 t_prcs_dataIn_4: PROCESS
 BEGIN
+	dataIn(4) <= '0';
+	WAIT FOR 40000 ps;
+	dataIn(4) <= '1';
+	WAIT FOR 170000 ps;
 	dataIn(4) <= '0';
 WAIT;
 END PROCESS t_prcs_dataIn_4;
@@ -100,11 +116,19 @@ END PROCESS t_prcs_dataIn_4;
 t_prcs_dataIn_3: PROCESS
 BEGIN
 	dataIn(3) <= '0';
+	WAIT FOR 40000 ps;
+	dataIn(3) <= '1';
+	WAIT FOR 170000 ps;
+	dataIn(3) <= '0';
 WAIT;
 END PROCESS t_prcs_dataIn_3;
 -- dataIn[2]
 t_prcs_dataIn_2: PROCESS
 BEGIN
+	dataIn(2) <= '0';
+	WAIT FOR 40000 ps;
+	dataIn(2) <= '1';
+	WAIT FOR 170000 ps;
 	dataIn(2) <= '0';
 WAIT;
 END PROCESS t_prcs_dataIn_2;
@@ -112,11 +136,19 @@ END PROCESS t_prcs_dataIn_2;
 t_prcs_dataIn_1: PROCESS
 BEGIN
 	dataIn(1) <= '0';
+	WAIT FOR 40000 ps;
+	dataIn(1) <= '1';
+	WAIT FOR 170000 ps;
+	dataIn(1) <= '0';
 WAIT;
 END PROCESS t_prcs_dataIn_1;
 -- dataIn[0]
 t_prcs_dataIn_0: PROCESS
 BEGIN
+	dataIn(0) <= '0';
+	WAIT FOR 40000 ps;
+	dataIn(0) <= '1';
+	WAIT FOR 170000 ps;
 	dataIn(0) <= '0';
 WAIT;
 END PROCESS t_prcs_dataIn_0;

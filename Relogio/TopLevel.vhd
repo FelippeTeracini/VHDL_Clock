@@ -19,15 +19,35 @@ ARCHITECTURE comportamento OF TopLevel IS
 
 	signal resetBaseTempo : std_logic;
 	
-	signal dataIn, dataOut, addrOut : std_logic_vector(7 downto 0);
+	signal dataIn, dataOut, addrOut : std_logic_vector(7 downto 0) := (OTHERS => '0');
 	signal rd, wr : std_logic;
 	
 	signal enableSec, enableMin, enableHrs, rd_baseTempo, rd_butMin, reset_butMin, rd_butHrs, reset_butHrs : std_logic;
 	
 	signal addrRom : std_logic_vector(5 downto 0);
 	signal dadoRom : std_logic_vector(13 downto 0);
+	
+	
+--	signal divisor : integer := 15000000;
+--	signal tick : std_logic := '0';
+--	signal contador : integer range 0 to divisor+1 := 0;
 
 BEGIN
+
+
+--LEDG(5 downto 0) <= addrRom;
+
+--	process(CLOCK_50)
+--        begin
+--            if rising_edge(CLOCK_50) then
+--                if contador = divisor then
+--                    contador <= 0;
+--                    tick <= not tick;
+--                else
+--                    contador <= contador + 1;
+--                end if;
+--            end if;
+--        end process;
 
 	BaseTempo : entity work.Base_de_tempo_bloco
 		port map (
@@ -57,7 +77,7 @@ BEGIN
 			larguraEndROM => 6
 		)
 		port map(
-			Clk => CLOCK_50,
+			Clk => CLOCK_50,--tick,
 
 			DataIn => dataIn,
 			bancoOut => dataOut,
@@ -107,7 +127,7 @@ BEGIN
 		
 	Buttons : entity work.Button_IO 
 		port map (
-			KEY => KEY,
+			ButInput => KEY,
 			RD_ButMin => rd_butMin,
 			RESET_ButMin => reset_butMin,
 			RD_ButHrs => rd_butHrs,
@@ -119,7 +139,11 @@ BEGIN
 	HEX0 <= "1111111";
 	HEX1 <= "1111111";
 	
-	LEDR(17 downto 15) <= SW(17 downto 15);
-	LEDR(7 downto 0) <= SW(7 downto 0);
+	LEDR(17 downto 10) <= addrOut;
+--	LEDR(7 downto 0) <= SW(7 downto 0);
+	--LEDG(3 downto 0) <= not(KEY);
+	LEDR(0) <= wr;
+	LEDR(1) <= rd;
+	LEDR(3) <= reset_butHrs;
 
 END comportamento;

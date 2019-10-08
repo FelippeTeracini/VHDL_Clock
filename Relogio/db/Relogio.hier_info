@@ -1,34 +1,211 @@
-|TopLevelTeste
-Clk => cpu:Cpu.Clk
-dataIn[0] => cpu:Cpu.DataIn[0]
-dataIn[1] => cpu:Cpu.DataIn[1]
-dataIn[2] => cpu:Cpu.DataIn[2]
-dataIn[3] => cpu:Cpu.DataIn[3]
-dataIn[4] => cpu:Cpu.DataIn[4]
-dataIn[5] => cpu:Cpu.DataIn[5]
-dataIn[6] => cpu:Cpu.DataIn[6]
-dataIn[7] => cpu:Cpu.DataIn[7]
-dataOut[0] << cpu:Cpu.bancoOut[0]
-dataOut[1] << cpu:Cpu.bancoOut[1]
-dataOut[2] << cpu:Cpu.bancoOut[2]
-dataOut[3] << cpu:Cpu.bancoOut[3]
-dataOut[4] << cpu:Cpu.bancoOut[4]
-dataOut[5] << cpu:Cpu.bancoOut[5]
-dataOut[6] << cpu:Cpu.bancoOut[6]
-dataOut[7] << cpu:Cpu.bancoOut[7]
-addrOut[0] << cpu:Cpu.ADDROut[0]
-addrOut[1] << cpu:Cpu.ADDROut[1]
-addrOut[2] << cpu:Cpu.ADDROut[2]
-addrOut[3] << cpu:Cpu.ADDROut[3]
-addrOut[4] << cpu:Cpu.ADDROut[4]
-addrOut[5] << cpu:Cpu.ADDROut[5]
-addrOut[6] << cpu:Cpu.ADDROut[6]
-addrOut[7] << cpu:Cpu.ADDROut[7]
-rd << cpu:Cpu.RD
-wr << cpu:Cpu.WR
+|TopLevel
+KEY[0] => button_io:Buttons.ButInput[0]
+KEY[1] => button_io:Buttons.ButInput[1]
+KEY[2] => button_io:Buttons.ButInput[2]
+KEY[3] => button_io:Buttons.ButInput[3]
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => ~NO_FANOUT~
+SW[9] => ~NO_FANOUT~
+SW[10] => ~NO_FANOUT~
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => base_de_tempo_bloco:BaseTempo.speed
+SW[15] => ~NO_FANOUT~
+SW[16] => ~NO_FANOUT~
+SW[17] => ~NO_FANOUT~
+CLOCK_50 => base_de_tempo_bloco:BaseTempo.clk
+CLOCK_50 => cpu:Cpu.Clk
+CLOCK_50 => bcd:BCD.clk
+LEDR[0] <= cpu:Cpu.WR
+LEDR[1] <= cpu:Cpu.RD
+LEDR[2] <= <GND>
+LEDR[3] <= decoder_endereco:DecoderEndereco.RESET_ButHrs
+LEDR[4] <= <GND>
+LEDR[5] <= <GND>
+LEDR[6] <= <GND>
+LEDR[7] <= <GND>
+LEDR[8] <= <GND>
+LEDR[9] <= <GND>
+LEDR[10] <= cpu:Cpu.ADDROut[0]
+LEDR[11] <= cpu:Cpu.ADDROut[1]
+LEDR[12] <= cpu:Cpu.ADDROut[2]
+LEDR[13] <= cpu:Cpu.ADDROut[3]
+LEDR[14] <= cpu:Cpu.ADDROut[4]
+LEDR[15] <= cpu:Cpu.ADDROut[5]
+LEDR[16] <= cpu:Cpu.ADDROut[6]
+LEDR[17] <= cpu:Cpu.ADDROut[7]
+LEDG[0] <= <GND>
+LEDG[1] <= <GND>
+LEDG[2] <= <GND>
+LEDG[3] <= <GND>
+LEDG[4] <= <GND>
+LEDG[5] <= <GND>
+LEDG[6] <= <GND>
+LEDG[7] <= <GND>
+HEX0[0] <= <VCC>
+HEX0[1] <= <VCC>
+HEX0[2] <= <VCC>
+HEX0[3] <= <VCC>
+HEX0[4] <= <VCC>
+HEX0[5] <= <VCC>
+HEX0[6] <= <VCC>
+HEX1[0] <= <VCC>
+HEX1[1] <= <VCC>
+HEX1[2] <= <VCC>
+HEX1[3] <= <VCC>
+HEX1[4] <= <VCC>
+HEX1[5] <= <VCC>
+HEX1[6] <= <VCC>
+HEX2[0] <= bcd:BCD.saidaHEX0[0]
+HEX2[1] <= bcd:BCD.saidaHEX0[1]
+HEX2[2] <= bcd:BCD.saidaHEX0[2]
+HEX2[3] <= bcd:BCD.saidaHEX0[3]
+HEX2[4] <= bcd:BCD.saidaHEX0[4]
+HEX2[5] <= bcd:BCD.saidaHEX0[5]
+HEX2[6] <= bcd:BCD.saidaHEX0[6]
+HEX3[0] <= bcd:BCD.saidaHEX1[0]
+HEX3[1] <= bcd:BCD.saidaHEX1[1]
+HEX3[2] <= bcd:BCD.saidaHEX1[2]
+HEX3[3] <= bcd:BCD.saidaHEX1[3]
+HEX3[4] <= bcd:BCD.saidaHEX1[4]
+HEX3[5] <= bcd:BCD.saidaHEX1[5]
+HEX3[6] <= bcd:BCD.saidaHEX1[6]
+HEX4[0] <= bcd:BCD.saidaHEX2[0]
+HEX4[1] <= bcd:BCD.saidaHEX2[1]
+HEX4[2] <= bcd:BCD.saidaHEX2[2]
+HEX4[3] <= bcd:BCD.saidaHEX2[3]
+HEX4[4] <= bcd:BCD.saidaHEX2[4]
+HEX4[5] <= bcd:BCD.saidaHEX2[5]
+HEX4[6] <= bcd:BCD.saidaHEX2[6]
+HEX5[0] <= bcd:BCD.saidaHEX3[0]
+HEX5[1] <= bcd:BCD.saidaHEX3[1]
+HEX5[2] <= bcd:BCD.saidaHEX3[2]
+HEX5[3] <= bcd:BCD.saidaHEX3[3]
+HEX5[4] <= bcd:BCD.saidaHEX3[4]
+HEX5[5] <= bcd:BCD.saidaHEX3[5]
+HEX5[6] <= bcd:BCD.saidaHEX3[6]
+HEX6[0] <= bcd:BCD.saidaHEX4[0]
+HEX6[1] <= bcd:BCD.saidaHEX4[1]
+HEX6[2] <= bcd:BCD.saidaHEX4[2]
+HEX6[3] <= bcd:BCD.saidaHEX4[3]
+HEX6[4] <= bcd:BCD.saidaHEX4[4]
+HEX6[5] <= bcd:BCD.saidaHEX4[5]
+HEX6[6] <= bcd:BCD.saidaHEX4[6]
+HEX7[0] <= bcd:BCD.saidaHEX5[0]
+HEX7[1] <= bcd:BCD.saidaHEX5[1]
+HEX7[2] <= bcd:BCD.saidaHEX5[2]
+HEX7[3] <= bcd:BCD.saidaHEX5[3]
+HEX7[4] <= bcd:BCD.saidaHEX5[4]
+HEX7[5] <= bcd:BCD.saidaHEX5[5]
+HEX7[6] <= bcd:BCD.saidaHEX5[6]
 
 
-|TopLevelTeste|romMif:Rom
+|TopLevel|Base_de_tempo_bloco:BaseTempo
+clk => base_de_tempo:base_lento.clk
+clk => base_de_tempo:base_rapida.clk
+speed => mux2_1:Mux.Sel
+reset => registrador:Reg.reset
+enable => tristate:triState.enable
+saida_buffer <= tristate:triState.output[0]
+
+
+|TopLevel|Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_lento
+clk => divisorgenerico:fazDivisaoInteiro.clk
+saida_clk <= divisorgenerico:fazDivisaoInteiro.saida_clk
+
+
+|TopLevel|Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_lento|divisorGenerico:fazDivisaoInteiro
+clk => tick.CLK
+clk => contador[0].CLK
+clk => contador[1].CLK
+clk => contador[2].CLK
+clk => contador[3].CLK
+clk => contador[4].CLK
+clk => contador[5].CLK
+clk => contador[6].CLK
+clk => contador[7].CLK
+clk => contador[8].CLK
+clk => contador[9].CLK
+clk => contador[10].CLK
+clk => contador[11].CLK
+clk => contador[12].CLK
+clk => contador[13].CLK
+clk => contador[14].CLK
+clk => contador[15].CLK
+clk => contador[16].CLK
+clk => contador[17].CLK
+clk => contador[18].CLK
+clk => contador[19].CLK
+clk => contador[20].CLK
+clk => contador[21].CLK
+clk => contador[22].CLK
+clk => contador[23].CLK
+clk => contador[24].CLK
+saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_rapida
+clk => divisorgenerico:fazDivisaoInteiro.clk
+saida_clk <= divisorgenerico:fazDivisaoInteiro.saida_clk
+
+
+|TopLevel|Base_de_tempo_bloco:BaseTempo|Base_de_tempo:base_rapida|divisorGenerico:fazDivisaoInteiro
+clk => tick.CLK
+clk => contador[0].CLK
+clk => contador[1].CLK
+clk => contador[2].CLK
+clk => contador[3].CLK
+clk => contador[4].CLK
+clk => contador[5].CLK
+clk => contador[6].CLK
+clk => contador[7].CLK
+clk => contador[8].CLK
+clk => contador[9].CLK
+clk => contador[10].CLK
+clk => contador[11].CLK
+clk => contador[12].CLK
+clk => contador[13].CLK
+clk => contador[14].CLK
+clk => contador[15].CLK
+clk => contador[16].CLK
+clk => contador[17].CLK
+clk => contador[18].CLK
+clk => contador[19].CLK
+clk => contador[20].CLK
+clk => contador[21].CLK
+saida_clk <= tick.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Base_de_tempo_bloco:BaseTempo|MUX2_1:Mux
+A[0] => Y.DATAB
+B[0] => Y.DATAA
+Sel => Y.OUTPUTSELECT
+Y[0] <= Y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Base_de_tempo_bloco:BaseTempo|registrador:Reg
+clk => output[0]~reg0.CLK
+enable => output[0]~reg0.ENA
+reset => output[0]~reg0.ACLR
+data[0] => output[0]~reg0.DATAIN
+output[0] <= output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Base_de_tempo_bloco:BaseTempo|tristate:triState
+input[0] => output[0].DATAIN
+enable => output[0].OE
+output[0] <= output[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|romMif:Rom
 Endereco[0] => content.RADDR
 Endereco[1] => content.RADDR1
 Endereco[2] => content.RADDR2
@@ -51,7 +228,7 @@ Dado[12] <= content.DATAOUT12
 Dado[13] <= content.DATAOUT13
 
 
-|TopLevelTeste|Cpu:Cpu
+|TopLevel|Cpu:Cpu
 Clk => cpunouc:CPUnoUC.Clk
 DataIn[0] => cpunouc:CPUnoUC.DataIn[0]
 DataIn[1] => cpunouc:CPUnoUC.DataIn[1]
@@ -112,7 +289,7 @@ DadoROM[13] => cpunouc:CPUnoUC.DadoROM[13]
 DadoROM[13] => uc:Uc.opcode[2]
 
 
-|TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC
+|TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC
 Clk => banco_ula:BncULA.Clk
 Clk => pc:Pc.Clk
 DataIn[0] => mux2_1:Mux.B[0]
@@ -169,7 +346,7 @@ jmpne => selMuxEnd.IN1
 jmp => selMuxEnd.IN1
 
 
-|TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA
+|TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA
 Clk => bancoderegistradores:Banco.clk
 Clk => registrador:Zero.clk
 enableZero => registrador:Zero.enable
@@ -202,7 +379,7 @@ bancoOut[7] <= bancoderegistradores:Banco.saidaA[7]
 saidaZero[0] <= registrador:Zero.output[0]
 
 
-|TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco
+|TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|BancoDeRegistradores:Banco
 clk => registrador~11.CLK
 clk => registrador~0.CLK
 clk => registrador~1.CLK
@@ -253,7 +430,7 @@ saidaA[6] <= registrador.DATAOUT6
 saidaA[7] <= registrador.DATAOUT7
 
 
-|TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula
+|TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|ULA:Ula
 A[0] => Add0.IN56
 A[0] => Equal0.IN55
 A[1] => Add0.IN55
@@ -327,7 +504,7 @@ saida[7] <= resultado[7].DB_MAX_OUTPUT_PORT_TYPE
 zero[0] <= zero[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero
+|TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|Banco_ULA:BncULA|registrador:Zero
 clk => output[0]~reg0.CLK
 enable => output[0]~reg0.ENA
 reset => output[0]~reg0.ACLR
@@ -335,7 +512,7 @@ data[0] => output[0]~reg0.DATAIN
 output[0] <= output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc
+|TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc
 Clk => registrador:PC.clk
 enable_pc => registrador:PC.enable
 reset_pc => registrador:PC.reset
@@ -360,7 +537,7 @@ Addr[4] <= registrador:PC.output[4]
 Addr[5] <= registrador:PC.output[5]
 
 
-|TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|MUX2_1:Mux
+|TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|MUX2_1:Mux
 A[0] => Y.DATAB
 A[1] => Y.DATAB
 A[2] => Y.DATAB
@@ -387,7 +564,7 @@ Y[4] <= Y.DB_MAX_OUTPUT_PORT_TYPE
 Y[5] <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|somadorGenerico:Somador
+|TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|somadorGenerico:Somador
 entradaA[0] => Add0.IN6
 entradaA[1] => Add0.IN5
 entradaA[2] => Add0.IN4
@@ -408,7 +585,7 @@ saida[4] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 saida[5] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC
+|TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC
 clk => output[0]~reg0.CLK
 clk => output[1]~reg0.CLK
 clk => output[2]~reg0.CLK
@@ -441,7 +618,7 @@ output[4] <= output[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 output[5] <= output[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopLevelTeste|Cpu:Cpu|CpuNoUc:CPUnoUC|MUX2_1:Mux
+|TopLevel|Cpu:Cpu|CpuNoUc:CPUnoUC|MUX2_1:Mux
 A[0] => Y.DATAB
 A[1] => Y.DATAB
 A[2] => Y.DATAB
@@ -476,7 +653,7 @@ Y[6] <= Y.DB_MAX_OUTPUT_PORT_TYPE
 Y[7] <= Y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|TopLevelTeste|Cpu:Cpu|UC:Uc
+|TopLevel|Cpu:Cpu|UC:Uc
 opcode[0] => Mux0.IN10
 opcode[0] => Mux1.IN10
 opcode[0] => Mux2.IN10
@@ -485,6 +662,7 @@ opcode[0] => Mux4.IN10
 opcode[0] => Mux5.IN10
 opcode[0] => Mux6.IN10
 opcode[0] => Mux7.IN10
+opcode[0] => Mux8.IN10
 opcode[1] => Mux0.IN9
 opcode[1] => Mux1.IN9
 opcode[1] => Mux2.IN9
@@ -493,6 +671,7 @@ opcode[1] => Mux4.IN9
 opcode[1] => Mux5.IN9
 opcode[1] => Mux6.IN9
 opcode[1] => Mux7.IN9
+opcode[1] => Mux8.IN9
 opcode[2] => Mux0.IN8
 opcode[2] => Mux1.IN8
 opcode[2] => Mux2.IN8
@@ -501,6 +680,7 @@ opcode[2] => Mux4.IN8
 opcode[2] => Mux5.IN8
 opcode[2] => Mux6.IN8
 opcode[2] => Mux7.IN8
+opcode[2] => Mux8.IN8
 op[0] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 op[1] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 jmp <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
@@ -508,7 +688,880 @@ jne <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
 HabBanco <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
 HabRD <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
 RD <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
-WR <= <GND>
-MuxULA <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+WR <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+MuxULA <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Decoder_endereco:DecoderEndereco
+ADDR[0] => Mux0.IN262
+ADDR[0] => Mux1.IN262
+ADDR[0] => Mux2.IN262
+ADDR[0] => Mux3.IN262
+ADDR[0] => Mux4.IN262
+ADDR[0] => Mux5.IN262
+ADDR[0] => Mux6.IN262
+ADDR[0] => Mux7.IN262
+ADDR[0] => Mux8.IN262
+ADDR[1] => Mux0.IN261
+ADDR[1] => Mux1.IN261
+ADDR[1] => Mux2.IN261
+ADDR[1] => Mux3.IN261
+ADDR[1] => Mux4.IN261
+ADDR[1] => Mux5.IN261
+ADDR[1] => Mux6.IN261
+ADDR[1] => Mux7.IN261
+ADDR[1] => Mux8.IN261
+ADDR[2] => Mux0.IN260
+ADDR[2] => Mux1.IN260
+ADDR[2] => Mux2.IN260
+ADDR[2] => Mux3.IN260
+ADDR[2] => Mux4.IN260
+ADDR[2] => Mux5.IN260
+ADDR[2] => Mux6.IN260
+ADDR[2] => Mux7.IN260
+ADDR[2] => Mux8.IN260
+ADDR[3] => Mux0.IN259
+ADDR[3] => Mux1.IN259
+ADDR[3] => Mux2.IN259
+ADDR[3] => Mux3.IN259
+ADDR[3] => Mux4.IN259
+ADDR[3] => Mux5.IN259
+ADDR[3] => Mux6.IN259
+ADDR[3] => Mux7.IN259
+ADDR[3] => Mux8.IN259
+ADDR[4] => Mux0.IN258
+ADDR[4] => Mux1.IN258
+ADDR[4] => Mux2.IN258
+ADDR[4] => Mux3.IN258
+ADDR[4] => Mux4.IN258
+ADDR[4] => Mux5.IN258
+ADDR[4] => Mux6.IN258
+ADDR[4] => Mux7.IN258
+ADDR[4] => Mux8.IN258
+ADDR[5] => Mux0.IN257
+ADDR[5] => Mux1.IN257
+ADDR[5] => Mux2.IN257
+ADDR[5] => Mux3.IN257
+ADDR[5] => Mux4.IN257
+ADDR[5] => Mux5.IN257
+ADDR[5] => Mux6.IN257
+ADDR[5] => Mux7.IN257
+ADDR[5] => Mux8.IN257
+ADDR[6] => Mux0.IN256
+ADDR[6] => Mux1.IN256
+ADDR[6] => Mux2.IN256
+ADDR[6] => Mux3.IN256
+ADDR[6] => Mux4.IN256
+ADDR[6] => Mux5.IN256
+ADDR[6] => Mux6.IN256
+ADDR[6] => Mux7.IN256
+ADDR[6] => Mux8.IN256
+ADDR[7] => Mux0.IN255
+ADDR[7] => Mux1.IN255
+ADDR[7] => Mux2.IN255
+ADDR[7] => Mux3.IN255
+ADDR[7] => Mux4.IN255
+ADDR[7] => Mux5.IN255
+ADDR[7] => Mux6.IN255
+ADDR[7] => Mux7.IN255
+ADDR[7] => Mux8.IN255
+RD => Mux3.IN263
+RD => Mux5.IN263
+RD => Mux7.IN263
+WR => Mux0.IN263
+WR => Mux1.IN263
+WR => Mux2.IN263
+WR => Mux4.IN263
+WR => Mux6.IN263
+WR => Mux8.IN263
+EnableSec <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+EnableMin <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+EnableHrs <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+RD_BaseTempo <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+RESET_BaseTempo <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+RD_ButMin <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+RESET_ButMin <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+RD_ButHrs <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+RESET_ButHrs <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD
+clk => registrador:RegSecond0.clk
+clk => registrador:RegSecond1.clk
+clk => registrador:RegMinute0.clk
+clk => registrador:RegMinute1.clk
+clk => registrador:RegHour0.clk
+clk => registrador:RegHour1.clk
+dataOut[0] => binaryconverter:BinaryConverter.binary[0]
+dataOut[1] => binaryconverter:BinaryConverter.binary[1]
+dataOut[2] => binaryconverter:BinaryConverter.binary[2]
+dataOut[3] => binaryconverter:BinaryConverter.binary[3]
+dataOut[4] => binaryconverter:BinaryConverter.binary[4]
+dataOut[5] => binaryconverter:BinaryConverter.binary[5]
+dataOut[6] => binaryconverter:BinaryConverter.binary[6]
+dataOut[7] => binaryconverter:BinaryConverter.binary[7]
+enableSecond => registrador:RegSecond0.enable
+enableSecond => registrador:RegSecond1.enable
+enableMinute => registrador:RegMinute0.enable
+enableMinute => registrador:RegMinute1.enable
+enableHour => registrador:RegHour0.enable
+enableHour => registrador:RegHour1.enable
+saidaHEX0[0] <= conversorhex7seg:H0.saida7seg[0]
+saidaHEX0[1] <= conversorhex7seg:H0.saida7seg[1]
+saidaHEX0[2] <= conversorhex7seg:H0.saida7seg[2]
+saidaHEX0[3] <= conversorhex7seg:H0.saida7seg[3]
+saidaHEX0[4] <= conversorhex7seg:H0.saida7seg[4]
+saidaHEX0[5] <= conversorhex7seg:H0.saida7seg[5]
+saidaHEX0[6] <= conversorhex7seg:H0.saida7seg[6]
+saidaHEX1[0] <= conversorhex7seg:H1.saida7seg[0]
+saidaHEX1[1] <= conversorhex7seg:H1.saida7seg[1]
+saidaHEX1[2] <= conversorhex7seg:H1.saida7seg[2]
+saidaHEX1[3] <= conversorhex7seg:H1.saida7seg[3]
+saidaHEX1[4] <= conversorhex7seg:H1.saida7seg[4]
+saidaHEX1[5] <= conversorhex7seg:H1.saida7seg[5]
+saidaHEX1[6] <= conversorhex7seg:H1.saida7seg[6]
+saidaHEX2[0] <= conversorhex7seg:H2.saida7seg[0]
+saidaHEX2[1] <= conversorhex7seg:H2.saida7seg[1]
+saidaHEX2[2] <= conversorhex7seg:H2.saida7seg[2]
+saidaHEX2[3] <= conversorhex7seg:H2.saida7seg[3]
+saidaHEX2[4] <= conversorhex7seg:H2.saida7seg[4]
+saidaHEX2[5] <= conversorhex7seg:H2.saida7seg[5]
+saidaHEX2[6] <= conversorhex7seg:H2.saida7seg[6]
+saidaHEX3[0] <= conversorhex7seg:H3.saida7seg[0]
+saidaHEX3[1] <= conversorhex7seg:H3.saida7seg[1]
+saidaHEX3[2] <= conversorhex7seg:H3.saida7seg[2]
+saidaHEX3[3] <= conversorhex7seg:H3.saida7seg[3]
+saidaHEX3[4] <= conversorhex7seg:H3.saida7seg[4]
+saidaHEX3[5] <= conversorhex7seg:H3.saida7seg[5]
+saidaHEX3[6] <= conversorhex7seg:H3.saida7seg[6]
+saidaHEX4[0] <= conversorhex7seg:H4.saida7seg[0]
+saidaHEX4[1] <= conversorhex7seg:H4.saida7seg[1]
+saidaHEX4[2] <= conversorhex7seg:H4.saida7seg[2]
+saidaHEX4[3] <= conversorhex7seg:H4.saida7seg[3]
+saidaHEX4[4] <= conversorhex7seg:H4.saida7seg[4]
+saidaHEX4[5] <= conversorhex7seg:H4.saida7seg[5]
+saidaHEX4[6] <= conversorhex7seg:H4.saida7seg[6]
+saidaHEX5[0] <= conversorhex7seg:H5.saida7seg[0]
+saidaHEX5[1] <= conversorhex7seg:H5.saida7seg[1]
+saidaHEX5[2] <= conversorhex7seg:H5.saida7seg[2]
+saidaHEX5[3] <= conversorhex7seg:H5.saida7seg[3]
+saidaHEX5[4] <= conversorhex7seg:H5.saida7seg[4]
+saidaHEX5[5] <= conversorhex7seg:H5.saida7seg[5]
+saidaHEX5[6] <= conversorhex7seg:H5.saida7seg[6]
+
+
+|TopLevel|BCD:BCD|BinaryConverter:BinaryConverter
+binary[0] => Div0.IN11
+binary[0] => Mod0.IN15
+binary[1] => Div0.IN10
+binary[1] => Mod0.IN14
+binary[2] => Div0.IN9
+binary[2] => Mod0.IN13
+binary[3] => Div0.IN8
+binary[3] => Mod0.IN12
+binary[4] => Div0.IN7
+binary[4] => Mod0.IN11
+binary[5] => Div0.IN6
+binary[5] => Mod0.IN10
+binary[6] => Div0.IN5
+binary[6] => Mod0.IN9
+binary[7] => Div0.IN4
+binary[7] => Mod0.IN8
+digit0[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+digit0[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+digit0[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+digit0[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+digit1[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+digit1[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+digit1[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+digit1[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|registrador:RegSecond0
+clk => output[0]~reg0.CLK
+clk => output[1]~reg0.CLK
+clk => output[2]~reg0.CLK
+clk => output[3]~reg0.CLK
+enable => output[3]~reg0.ENA
+enable => output[2]~reg0.ENA
+enable => output[1]~reg0.ENA
+enable => output[0]~reg0.ENA
+reset => output[0]~reg0.ACLR
+reset => output[1]~reg0.ACLR
+reset => output[2]~reg0.ACLR
+reset => output[3]~reg0.ACLR
+data[0] => output[0]~reg0.DATAIN
+data[1] => output[1]~reg0.DATAIN
+data[2] => output[2]~reg0.DATAIN
+data[3] => output[3]~reg0.DATAIN
+output[0] <= output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|registrador:RegSecond1
+clk => output[0]~reg0.CLK
+clk => output[1]~reg0.CLK
+clk => output[2]~reg0.CLK
+clk => output[3]~reg0.CLK
+enable => output[3]~reg0.ENA
+enable => output[2]~reg0.ENA
+enable => output[1]~reg0.ENA
+enable => output[0]~reg0.ENA
+reset => output[0]~reg0.ACLR
+reset => output[1]~reg0.ACLR
+reset => output[2]~reg0.ACLR
+reset => output[3]~reg0.ACLR
+data[0] => output[0]~reg0.DATAIN
+data[1] => output[1]~reg0.DATAIN
+data[2] => output[2]~reg0.DATAIN
+data[3] => output[3]~reg0.DATAIN
+output[0] <= output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|registrador:RegMinute0
+clk => output[0]~reg0.CLK
+clk => output[1]~reg0.CLK
+clk => output[2]~reg0.CLK
+clk => output[3]~reg0.CLK
+enable => output[3]~reg0.ENA
+enable => output[2]~reg0.ENA
+enable => output[1]~reg0.ENA
+enable => output[0]~reg0.ENA
+reset => output[0]~reg0.ACLR
+reset => output[1]~reg0.ACLR
+reset => output[2]~reg0.ACLR
+reset => output[3]~reg0.ACLR
+data[0] => output[0]~reg0.DATAIN
+data[1] => output[1]~reg0.DATAIN
+data[2] => output[2]~reg0.DATAIN
+data[3] => output[3]~reg0.DATAIN
+output[0] <= output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|registrador:RegMinute1
+clk => output[0]~reg0.CLK
+clk => output[1]~reg0.CLK
+clk => output[2]~reg0.CLK
+clk => output[3]~reg0.CLK
+enable => output[3]~reg0.ENA
+enable => output[2]~reg0.ENA
+enable => output[1]~reg0.ENA
+enable => output[0]~reg0.ENA
+reset => output[0]~reg0.ACLR
+reset => output[1]~reg0.ACLR
+reset => output[2]~reg0.ACLR
+reset => output[3]~reg0.ACLR
+data[0] => output[0]~reg0.DATAIN
+data[1] => output[1]~reg0.DATAIN
+data[2] => output[2]~reg0.DATAIN
+data[3] => output[3]~reg0.DATAIN
+output[0] <= output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|registrador:RegHour0
+clk => output[0]~reg0.CLK
+clk => output[1]~reg0.CLK
+clk => output[2]~reg0.CLK
+clk => output[3]~reg0.CLK
+enable => output[3]~reg0.ENA
+enable => output[2]~reg0.ENA
+enable => output[1]~reg0.ENA
+enable => output[0]~reg0.ENA
+reset => output[0]~reg0.ACLR
+reset => output[1]~reg0.ACLR
+reset => output[2]~reg0.ACLR
+reset => output[3]~reg0.ACLR
+data[0] => output[0]~reg0.DATAIN
+data[1] => output[1]~reg0.DATAIN
+data[2] => output[2]~reg0.DATAIN
+data[3] => output[3]~reg0.DATAIN
+output[0] <= output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|registrador:RegHour1
+clk => output[0]~reg0.CLK
+clk => output[1]~reg0.CLK
+clk => output[2]~reg0.CLK
+clk => output[3]~reg0.CLK
+enable => output[3]~reg0.ENA
+enable => output[2]~reg0.ENA
+enable => output[1]~reg0.ENA
+enable => output[0]~reg0.ENA
+reset => output[0]~reg0.ACLR
+reset => output[1]~reg0.ACLR
+reset => output[2]~reg0.ACLR
+reset => output[3]~reg0.ACLR
+data[0] => output[0]~reg0.DATAIN
+data[1] => output[1]~reg0.DATAIN
+data[2] => output[2]~reg0.DATAIN
+data[3] => output[3]~reg0.DATAIN
+output[0] <= output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= output[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= output[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= output[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|conversorHex7Seg:H0
+dadoHex[0] => Equal0.IN3
+dadoHex[0] => Equal1.IN0
+dadoHex[0] => Equal2.IN3
+dadoHex[0] => Equal3.IN1
+dadoHex[0] => Equal4.IN3
+dadoHex[0] => Equal5.IN1
+dadoHex[0] => Equal6.IN3
+dadoHex[0] => Equal7.IN2
+dadoHex[0] => Equal8.IN3
+dadoHex[0] => Equal9.IN1
+dadoHex[0] => Equal10.IN3
+dadoHex[0] => Equal11.IN2
+dadoHex[0] => Equal12.IN3
+dadoHex[0] => Equal13.IN2
+dadoHex[0] => Equal14.IN3
+dadoHex[0] => Equal15.IN3
+dadoHex[1] => Equal0.IN2
+dadoHex[1] => Equal1.IN3
+dadoHex[1] => Equal2.IN0
+dadoHex[1] => Equal3.IN0
+dadoHex[1] => Equal4.IN2
+dadoHex[1] => Equal5.IN3
+dadoHex[1] => Equal6.IN1
+dadoHex[1] => Equal7.IN1
+dadoHex[1] => Equal8.IN2
+dadoHex[1] => Equal9.IN3
+dadoHex[1] => Equal10.IN1
+dadoHex[1] => Equal11.IN1
+dadoHex[1] => Equal12.IN2
+dadoHex[1] => Equal13.IN3
+dadoHex[1] => Equal14.IN2
+dadoHex[1] => Equal15.IN2
+dadoHex[2] => Equal0.IN1
+dadoHex[2] => Equal1.IN2
+dadoHex[2] => Equal2.IN2
+dadoHex[2] => Equal3.IN3
+dadoHex[2] => Equal4.IN0
+dadoHex[2] => Equal5.IN0
+dadoHex[2] => Equal6.IN0
+dadoHex[2] => Equal7.IN0
+dadoHex[2] => Equal8.IN1
+dadoHex[2] => Equal9.IN2
+dadoHex[2] => Equal10.IN2
+dadoHex[2] => Equal11.IN3
+dadoHex[2] => Equal12.IN1
+dadoHex[2] => Equal13.IN1
+dadoHex[2] => Equal14.IN1
+dadoHex[2] => Equal15.IN1
+dadoHex[3] => Equal0.IN0
+dadoHex[3] => Equal1.IN1
+dadoHex[3] => Equal2.IN1
+dadoHex[3] => Equal3.IN2
+dadoHex[3] => Equal4.IN1
+dadoHex[3] => Equal5.IN2
+dadoHex[3] => Equal6.IN2
+dadoHex[3] => Equal7.IN3
+dadoHex[3] => Equal8.IN0
+dadoHex[3] => Equal9.IN0
+dadoHex[3] => Equal10.IN0
+dadoHex[3] => Equal11.IN0
+dadoHex[3] => Equal12.IN0
+dadoHex[3] => Equal13.IN0
+dadoHex[3] => Equal14.IN0
+dadoHex[3] => Equal15.IN0
+apaga => saida7seg.IN0
+apaga => saida7seg.IN0
+negativo => saida7seg.IN1
+negativo => saida7seg.IN1
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+saida7seg[0] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[1] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[2] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[3] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[4] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[5] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|conversorHex7Seg:H1
+dadoHex[0] => Equal0.IN3
+dadoHex[0] => Equal1.IN0
+dadoHex[0] => Equal2.IN3
+dadoHex[0] => Equal3.IN1
+dadoHex[0] => Equal4.IN3
+dadoHex[0] => Equal5.IN1
+dadoHex[0] => Equal6.IN3
+dadoHex[0] => Equal7.IN2
+dadoHex[0] => Equal8.IN3
+dadoHex[0] => Equal9.IN1
+dadoHex[0] => Equal10.IN3
+dadoHex[0] => Equal11.IN2
+dadoHex[0] => Equal12.IN3
+dadoHex[0] => Equal13.IN2
+dadoHex[0] => Equal14.IN3
+dadoHex[0] => Equal15.IN3
+dadoHex[1] => Equal0.IN2
+dadoHex[1] => Equal1.IN3
+dadoHex[1] => Equal2.IN0
+dadoHex[1] => Equal3.IN0
+dadoHex[1] => Equal4.IN2
+dadoHex[1] => Equal5.IN3
+dadoHex[1] => Equal6.IN1
+dadoHex[1] => Equal7.IN1
+dadoHex[1] => Equal8.IN2
+dadoHex[1] => Equal9.IN3
+dadoHex[1] => Equal10.IN1
+dadoHex[1] => Equal11.IN1
+dadoHex[1] => Equal12.IN2
+dadoHex[1] => Equal13.IN3
+dadoHex[1] => Equal14.IN2
+dadoHex[1] => Equal15.IN2
+dadoHex[2] => Equal0.IN1
+dadoHex[2] => Equal1.IN2
+dadoHex[2] => Equal2.IN2
+dadoHex[2] => Equal3.IN3
+dadoHex[2] => Equal4.IN0
+dadoHex[2] => Equal5.IN0
+dadoHex[2] => Equal6.IN0
+dadoHex[2] => Equal7.IN0
+dadoHex[2] => Equal8.IN1
+dadoHex[2] => Equal9.IN2
+dadoHex[2] => Equal10.IN2
+dadoHex[2] => Equal11.IN3
+dadoHex[2] => Equal12.IN1
+dadoHex[2] => Equal13.IN1
+dadoHex[2] => Equal14.IN1
+dadoHex[2] => Equal15.IN1
+dadoHex[3] => Equal0.IN0
+dadoHex[3] => Equal1.IN1
+dadoHex[3] => Equal2.IN1
+dadoHex[3] => Equal3.IN2
+dadoHex[3] => Equal4.IN1
+dadoHex[3] => Equal5.IN2
+dadoHex[3] => Equal6.IN2
+dadoHex[3] => Equal7.IN3
+dadoHex[3] => Equal8.IN0
+dadoHex[3] => Equal9.IN0
+dadoHex[3] => Equal10.IN0
+dadoHex[3] => Equal11.IN0
+dadoHex[3] => Equal12.IN0
+dadoHex[3] => Equal13.IN0
+dadoHex[3] => Equal14.IN0
+dadoHex[3] => Equal15.IN0
+apaga => saida7seg.IN0
+apaga => saida7seg.IN0
+negativo => saida7seg.IN1
+negativo => saida7seg.IN1
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+saida7seg[0] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[1] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[2] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[3] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[4] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[5] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|conversorHex7Seg:H2
+dadoHex[0] => Equal0.IN3
+dadoHex[0] => Equal1.IN0
+dadoHex[0] => Equal2.IN3
+dadoHex[0] => Equal3.IN1
+dadoHex[0] => Equal4.IN3
+dadoHex[0] => Equal5.IN1
+dadoHex[0] => Equal6.IN3
+dadoHex[0] => Equal7.IN2
+dadoHex[0] => Equal8.IN3
+dadoHex[0] => Equal9.IN1
+dadoHex[0] => Equal10.IN3
+dadoHex[0] => Equal11.IN2
+dadoHex[0] => Equal12.IN3
+dadoHex[0] => Equal13.IN2
+dadoHex[0] => Equal14.IN3
+dadoHex[0] => Equal15.IN3
+dadoHex[1] => Equal0.IN2
+dadoHex[1] => Equal1.IN3
+dadoHex[1] => Equal2.IN0
+dadoHex[1] => Equal3.IN0
+dadoHex[1] => Equal4.IN2
+dadoHex[1] => Equal5.IN3
+dadoHex[1] => Equal6.IN1
+dadoHex[1] => Equal7.IN1
+dadoHex[1] => Equal8.IN2
+dadoHex[1] => Equal9.IN3
+dadoHex[1] => Equal10.IN1
+dadoHex[1] => Equal11.IN1
+dadoHex[1] => Equal12.IN2
+dadoHex[1] => Equal13.IN3
+dadoHex[1] => Equal14.IN2
+dadoHex[1] => Equal15.IN2
+dadoHex[2] => Equal0.IN1
+dadoHex[2] => Equal1.IN2
+dadoHex[2] => Equal2.IN2
+dadoHex[2] => Equal3.IN3
+dadoHex[2] => Equal4.IN0
+dadoHex[2] => Equal5.IN0
+dadoHex[2] => Equal6.IN0
+dadoHex[2] => Equal7.IN0
+dadoHex[2] => Equal8.IN1
+dadoHex[2] => Equal9.IN2
+dadoHex[2] => Equal10.IN2
+dadoHex[2] => Equal11.IN3
+dadoHex[2] => Equal12.IN1
+dadoHex[2] => Equal13.IN1
+dadoHex[2] => Equal14.IN1
+dadoHex[2] => Equal15.IN1
+dadoHex[3] => Equal0.IN0
+dadoHex[3] => Equal1.IN1
+dadoHex[3] => Equal2.IN1
+dadoHex[3] => Equal3.IN2
+dadoHex[3] => Equal4.IN1
+dadoHex[3] => Equal5.IN2
+dadoHex[3] => Equal6.IN2
+dadoHex[3] => Equal7.IN3
+dadoHex[3] => Equal8.IN0
+dadoHex[3] => Equal9.IN0
+dadoHex[3] => Equal10.IN0
+dadoHex[3] => Equal11.IN0
+dadoHex[3] => Equal12.IN0
+dadoHex[3] => Equal13.IN0
+dadoHex[3] => Equal14.IN0
+dadoHex[3] => Equal15.IN0
+apaga => saida7seg.IN0
+apaga => saida7seg.IN0
+negativo => saida7seg.IN1
+negativo => saida7seg.IN1
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+saida7seg[0] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[1] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[2] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[3] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[4] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[5] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|conversorHex7Seg:H3
+dadoHex[0] => Equal0.IN3
+dadoHex[0] => Equal1.IN0
+dadoHex[0] => Equal2.IN3
+dadoHex[0] => Equal3.IN1
+dadoHex[0] => Equal4.IN3
+dadoHex[0] => Equal5.IN1
+dadoHex[0] => Equal6.IN3
+dadoHex[0] => Equal7.IN2
+dadoHex[0] => Equal8.IN3
+dadoHex[0] => Equal9.IN1
+dadoHex[0] => Equal10.IN3
+dadoHex[0] => Equal11.IN2
+dadoHex[0] => Equal12.IN3
+dadoHex[0] => Equal13.IN2
+dadoHex[0] => Equal14.IN3
+dadoHex[0] => Equal15.IN3
+dadoHex[1] => Equal0.IN2
+dadoHex[1] => Equal1.IN3
+dadoHex[1] => Equal2.IN0
+dadoHex[1] => Equal3.IN0
+dadoHex[1] => Equal4.IN2
+dadoHex[1] => Equal5.IN3
+dadoHex[1] => Equal6.IN1
+dadoHex[1] => Equal7.IN1
+dadoHex[1] => Equal8.IN2
+dadoHex[1] => Equal9.IN3
+dadoHex[1] => Equal10.IN1
+dadoHex[1] => Equal11.IN1
+dadoHex[1] => Equal12.IN2
+dadoHex[1] => Equal13.IN3
+dadoHex[1] => Equal14.IN2
+dadoHex[1] => Equal15.IN2
+dadoHex[2] => Equal0.IN1
+dadoHex[2] => Equal1.IN2
+dadoHex[2] => Equal2.IN2
+dadoHex[2] => Equal3.IN3
+dadoHex[2] => Equal4.IN0
+dadoHex[2] => Equal5.IN0
+dadoHex[2] => Equal6.IN0
+dadoHex[2] => Equal7.IN0
+dadoHex[2] => Equal8.IN1
+dadoHex[2] => Equal9.IN2
+dadoHex[2] => Equal10.IN2
+dadoHex[2] => Equal11.IN3
+dadoHex[2] => Equal12.IN1
+dadoHex[2] => Equal13.IN1
+dadoHex[2] => Equal14.IN1
+dadoHex[2] => Equal15.IN1
+dadoHex[3] => Equal0.IN0
+dadoHex[3] => Equal1.IN1
+dadoHex[3] => Equal2.IN1
+dadoHex[3] => Equal3.IN2
+dadoHex[3] => Equal4.IN1
+dadoHex[3] => Equal5.IN2
+dadoHex[3] => Equal6.IN2
+dadoHex[3] => Equal7.IN3
+dadoHex[3] => Equal8.IN0
+dadoHex[3] => Equal9.IN0
+dadoHex[3] => Equal10.IN0
+dadoHex[3] => Equal11.IN0
+dadoHex[3] => Equal12.IN0
+dadoHex[3] => Equal13.IN0
+dadoHex[3] => Equal14.IN0
+dadoHex[3] => Equal15.IN0
+apaga => saida7seg.IN0
+apaga => saida7seg.IN0
+negativo => saida7seg.IN1
+negativo => saida7seg.IN1
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+saida7seg[0] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[1] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[2] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[3] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[4] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[5] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|conversorHex7Seg:H4
+dadoHex[0] => Equal0.IN3
+dadoHex[0] => Equal1.IN0
+dadoHex[0] => Equal2.IN3
+dadoHex[0] => Equal3.IN1
+dadoHex[0] => Equal4.IN3
+dadoHex[0] => Equal5.IN1
+dadoHex[0] => Equal6.IN3
+dadoHex[0] => Equal7.IN2
+dadoHex[0] => Equal8.IN3
+dadoHex[0] => Equal9.IN1
+dadoHex[0] => Equal10.IN3
+dadoHex[0] => Equal11.IN2
+dadoHex[0] => Equal12.IN3
+dadoHex[0] => Equal13.IN2
+dadoHex[0] => Equal14.IN3
+dadoHex[0] => Equal15.IN3
+dadoHex[1] => Equal0.IN2
+dadoHex[1] => Equal1.IN3
+dadoHex[1] => Equal2.IN0
+dadoHex[1] => Equal3.IN0
+dadoHex[1] => Equal4.IN2
+dadoHex[1] => Equal5.IN3
+dadoHex[1] => Equal6.IN1
+dadoHex[1] => Equal7.IN1
+dadoHex[1] => Equal8.IN2
+dadoHex[1] => Equal9.IN3
+dadoHex[1] => Equal10.IN1
+dadoHex[1] => Equal11.IN1
+dadoHex[1] => Equal12.IN2
+dadoHex[1] => Equal13.IN3
+dadoHex[1] => Equal14.IN2
+dadoHex[1] => Equal15.IN2
+dadoHex[2] => Equal0.IN1
+dadoHex[2] => Equal1.IN2
+dadoHex[2] => Equal2.IN2
+dadoHex[2] => Equal3.IN3
+dadoHex[2] => Equal4.IN0
+dadoHex[2] => Equal5.IN0
+dadoHex[2] => Equal6.IN0
+dadoHex[2] => Equal7.IN0
+dadoHex[2] => Equal8.IN1
+dadoHex[2] => Equal9.IN2
+dadoHex[2] => Equal10.IN2
+dadoHex[2] => Equal11.IN3
+dadoHex[2] => Equal12.IN1
+dadoHex[2] => Equal13.IN1
+dadoHex[2] => Equal14.IN1
+dadoHex[2] => Equal15.IN1
+dadoHex[3] => Equal0.IN0
+dadoHex[3] => Equal1.IN1
+dadoHex[3] => Equal2.IN1
+dadoHex[3] => Equal3.IN2
+dadoHex[3] => Equal4.IN1
+dadoHex[3] => Equal5.IN2
+dadoHex[3] => Equal6.IN2
+dadoHex[3] => Equal7.IN3
+dadoHex[3] => Equal8.IN0
+dadoHex[3] => Equal9.IN0
+dadoHex[3] => Equal10.IN0
+dadoHex[3] => Equal11.IN0
+dadoHex[3] => Equal12.IN0
+dadoHex[3] => Equal13.IN0
+dadoHex[3] => Equal14.IN0
+dadoHex[3] => Equal15.IN0
+apaga => saida7seg.IN0
+apaga => saida7seg.IN0
+negativo => saida7seg.IN1
+negativo => saida7seg.IN1
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+saida7seg[0] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[1] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[2] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[3] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[4] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[5] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|BCD:BCD|conversorHex7Seg:H5
+dadoHex[0] => Equal0.IN3
+dadoHex[0] => Equal1.IN0
+dadoHex[0] => Equal2.IN3
+dadoHex[0] => Equal3.IN1
+dadoHex[0] => Equal4.IN3
+dadoHex[0] => Equal5.IN1
+dadoHex[0] => Equal6.IN3
+dadoHex[0] => Equal7.IN2
+dadoHex[0] => Equal8.IN3
+dadoHex[0] => Equal9.IN1
+dadoHex[0] => Equal10.IN3
+dadoHex[0] => Equal11.IN2
+dadoHex[0] => Equal12.IN3
+dadoHex[0] => Equal13.IN2
+dadoHex[0] => Equal14.IN3
+dadoHex[0] => Equal15.IN3
+dadoHex[1] => Equal0.IN2
+dadoHex[1] => Equal1.IN3
+dadoHex[1] => Equal2.IN0
+dadoHex[1] => Equal3.IN0
+dadoHex[1] => Equal4.IN2
+dadoHex[1] => Equal5.IN3
+dadoHex[1] => Equal6.IN1
+dadoHex[1] => Equal7.IN1
+dadoHex[1] => Equal8.IN2
+dadoHex[1] => Equal9.IN3
+dadoHex[1] => Equal10.IN1
+dadoHex[1] => Equal11.IN1
+dadoHex[1] => Equal12.IN2
+dadoHex[1] => Equal13.IN3
+dadoHex[1] => Equal14.IN2
+dadoHex[1] => Equal15.IN2
+dadoHex[2] => Equal0.IN1
+dadoHex[2] => Equal1.IN2
+dadoHex[2] => Equal2.IN2
+dadoHex[2] => Equal3.IN3
+dadoHex[2] => Equal4.IN0
+dadoHex[2] => Equal5.IN0
+dadoHex[2] => Equal6.IN0
+dadoHex[2] => Equal7.IN0
+dadoHex[2] => Equal8.IN1
+dadoHex[2] => Equal9.IN2
+dadoHex[2] => Equal10.IN2
+dadoHex[2] => Equal11.IN3
+dadoHex[2] => Equal12.IN1
+dadoHex[2] => Equal13.IN1
+dadoHex[2] => Equal14.IN1
+dadoHex[2] => Equal15.IN1
+dadoHex[3] => Equal0.IN0
+dadoHex[3] => Equal1.IN1
+dadoHex[3] => Equal2.IN1
+dadoHex[3] => Equal3.IN2
+dadoHex[3] => Equal4.IN1
+dadoHex[3] => Equal5.IN2
+dadoHex[3] => Equal6.IN2
+dadoHex[3] => Equal7.IN3
+dadoHex[3] => Equal8.IN0
+dadoHex[3] => Equal9.IN0
+dadoHex[3] => Equal10.IN0
+dadoHex[3] => Equal11.IN0
+dadoHex[3] => Equal12.IN0
+dadoHex[3] => Equal13.IN0
+dadoHex[3] => Equal14.IN0
+dadoHex[3] => Equal15.IN0
+apaga => saida7seg.IN0
+apaga => saida7seg.IN0
+negativo => saida7seg.IN1
+negativo => saida7seg.IN1
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+overFlow => saida7seg.OUTPUTSELECT
+saida7seg[0] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[1] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[2] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[3] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[4] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[5] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+saida7seg[6] <= saida7seg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Button_IO:Buttons
+ButInput[0] => registrador:RegMin.clk
+ButInput[1] => registrador:RegHrs.clk
+ButInput[2] => ~NO_FANOUT~
+ButInput[3] => ~NO_FANOUT~
+RD_ButMin => tristate:triStateMin.enable
+RESET_ButMin => registrador:RegMin.reset
+RD_ButHrs => tristate:triStateHrs.enable
+RESET_ButHrs => registrador:RegHrs.reset
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Button_IO:Buttons|registrador:RegMin
+clk => output[0]~reg0.CLK
+enable => output[0]~reg0.ENA
+reset => output[0]~reg0.ACLR
+data[0] => output[0]~reg0.DATAIN
+output[0] <= output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Button_IO:Buttons|registrador:RegHrs
+clk => output[0]~reg0.CLK
+enable => output[0]~reg0.ENA
+reset => output[0]~reg0.ACLR
+data[0] => output[0]~reg0.DATAIN
+output[0] <= output[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Button_IO:Buttons|tristate:triStateMin
+input[0] => output[0].DATAIN
+enable => output[0].OE
+output[0] <= output[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevel|Button_IO:Buttons|tristate:triStateHrs
+input[0] => output[0].DATAIN
+enable => output[0].OE
+output[0] <= output[0].DB_MAX_OUTPUT_PORT_TYPE
 
 

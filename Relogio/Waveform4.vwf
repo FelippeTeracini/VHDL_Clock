@@ -20,6 +20,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -38,6 +39,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
 </simulation_settings>*/
@@ -454,9 +456,9 @@ TRANSITION_LIST("Clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 25;
-			LEVEL 0 FOR 20.0;
-			LEVEL 1 FOR 20.0;
+			REPEAT = 50;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 		}
 	}
 }
@@ -466,7 +468,9 @@ TRANSITION_LIST("dataIn[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 170.0;
+		LEVEL 0 FOR 790.0;
 	}
 }
 
@@ -475,7 +479,9 @@ TRANSITION_LIST("dataIn[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 170.0;
+		LEVEL 0 FOR 790.0;
 	}
 }
 
@@ -484,7 +490,9 @@ TRANSITION_LIST("dataIn[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 170.0;
+		LEVEL 0 FOR 790.0;
 	}
 }
 
@@ -493,7 +501,9 @@ TRANSITION_LIST("dataIn[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 170.0;
+		LEVEL 0 FOR 790.0;
 	}
 }
 
@@ -502,7 +512,9 @@ TRANSITION_LIST("dataIn[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 170.0;
+		LEVEL 0 FOR 790.0;
 	}
 }
 
@@ -511,7 +523,9 @@ TRANSITION_LIST("dataIn[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 170.0;
+		LEVEL 0 FOR 790.0;
 	}
 }
 
@@ -520,7 +534,9 @@ TRANSITION_LIST("dataIn[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 170.0;
+		LEVEL 0 FOR 790.0;
 	}
 }
 
@@ -529,7 +545,9 @@ TRANSITION_LIST("dataIn[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL 0 FOR 40.0;
+		LEVEL 1 FOR 170.0;
+		LEVEL 0 FOR 790.0;
 	}
 }
 

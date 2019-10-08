@@ -101,7 +101,7 @@ BEGIN
 			HabBanco <= '0';
 			HabRD <= '0';
 			RD <= '0';
-			WR <= '0';
+			WR <= '1';
 			MuxULA <= '0';
 			
 			WHEN "111" => -- LOAD

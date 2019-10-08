@@ -6,14 +6,15 @@ Felippe Teracini, Guilherme Schoeri, Juan Garcia
 2. [Clock Features](#clock-features)
 3. [Pseudocode](#pseudocode)
 4. [Instructions](#instructions)
-5. [Addressing Modes](#addressing-modes)
-6. [Assembly](#assembly)
-7. [Assembler](#assembler)
-8. [CPU and ROM](#cpu-and-rom)
-9. [IO](#io)
-10. [Memory Mapping](#memory-mapping)
-11. [How to use](#how-to-use)
-12. [References](#references)
+5. [CU Signals](#cu-signals)
+6. [Addressing Modes](#addressing-modes)
+7. [Assembly](#assembly)
+8. [Assembler](#assembler)
+9. [CPU and ROM](#cpu-and-rom)
+10. [IO](#io)
+11. [Memory Mapping](#memory-mapping)
+12. [How to use](#how-to-use)
+13. [References](#references)
 
 
 ## Introduction
@@ -112,6 +113,18 @@ while (1) {
 | LOAD     | load reg, $immediate  | 111    | Loads immediate RAM address value to reg            |
 | STORE    | store reg, $immediate | 110    | Writes reg's value into the immediate RAM address   |
 
+## CU Signals
+
+| Instruction | OPCODE  | OP  | JMP | JMPNE | HABbanco| HABrd|MUX_ULA| RD  |   WR   |
+| ----------- |:------: |:---:|:-----:|:-------:|:----:|:-----:|:---:|:-----:|:-----:|
+| ADD         |  000    | 00   | 0     |    0    | 1    | 0     |0   |   0     |   0     |
+| CMP         |  001    | 10   | 0     |    0    | 0    | 1     |0   |   0     |   0     |
+| MOVI        |  010    | 01   | 0     |    0    | 1    | 0     |0   |   0     |   0     |
+| JMP         |  011    | XX   | 1     |    0    | 0    | 0     |X   |   0     |   0     |
+| JMPNE       |  100    | XX   | 0     |    1    | 0    | 0     |X   |   0     |   0     |
+| null        |  101    | 00   | 0     |    0    | 0    | 0     |0   |   0     |   0    |
+| LOAD        |  111    | 01   | 0     |    0    | 1    | 0     |1   |   1     |   0     |
+| STORE       |  110    | XX   | 0     |    0    | 0    | 0     |0   |   0     |   1     |
 
 
 ## Addressing Modes

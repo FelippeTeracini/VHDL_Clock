@@ -1,0 +1,132 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+ENTITY BCD IS
+	PORT (
+		--- IN ---
+--		SW  : IN std_logic_vector(17 downto 0);
+--		LEDR  : OUT std_logic_vector(17 downto 0) := (others => '0');
+		clk : IN std_logic;
+		dataOut : IN std_logic_vector(7 downto 0);
+		enableBCD : IN std_logic;
+		enableMinute : IN std_logic;
+		enableHour : IN std_logic;
+		
+		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : OUT STD_LOGIC_VECTOR(6 downto 0)
+
+	);
+
+END BCD;
+
+ARCHITECTURE comportamento OF BCD IS
+
+	signal saidaHEX0, saidaHEX1, saidaHEX2, saidaHEX3 : STD_LOGIC_VECTOR(6 downto 0);
+	signal saidaBinaryToBCD0, saidaBinaryToBCD1 : STD_LOGIC_VECTOR(3 downto 0);
+	signal saidaReg0, saidaReg1, saidaReg2, saidaReg3 : STD_LOGIC_VECTOR(6 downto 0);
+
+BEGIN
+
+	RegMinute0 : entity work.registrador
+		port map(
+			clk => clk,
+			enable => enableMinute,
+			reset	=> '0',
+			data => saidaBinaryToBCD0;
+
+			-- Output ports
+			output => saidaReg0
+		);
+		
+	RegMinute1 : entity work.registrador
+		port map(
+			clk => clk,
+			enable => enableMinute,
+			reset	=> '0',
+			data => saidaBinaryToBCD1;
+
+			-- Output ports
+			output => saidaReg1
+		);
+	
+	RegHour0 : entity work.registrador
+		port map(
+			clk => clk,
+			enable => enableHour,
+			reset	=> '0',
+			data => saidaBinaryToBCD0;
+
+			-- Output ports
+			output => saidaReg2
+		);
+		
+	RegHour1 : entity work.registrador
+		port map(
+			clk => clk,
+			enable => enableHour,
+			reset	=> '0',
+			data => saidaBinaryToBCD1;
+
+			-- Output ports
+			output => saidaReg3
+		);
+		
+
+	H0: entity work.conversorHex7Seg 
+		port map(
+			-- Input ports
+        dadoHex => saidaReg0,
+--        apaga   => SW(17),
+--        negativo => SW(16),
+--        overFlow => SW(15),
+		  
+        -- Output ports
+        saida7seg => saidaHEX0
+		 );
+	H1: entity work.conversorHex7Seg 
+		port map(
+			-- Input ports
+        dadoHex => saidaReg1,
+--        apaga   => SW(17),
+--        negativo => SW(16),
+--        overFlow => SW(15),
+		  
+        -- Output ports
+        saida7seg => saidaHEX1
+		 );
+	H2: entity work.conversorHex7Seg 
+		port map(
+			-- Input ports
+        dadoHex => saidaReg3,
+--        apaga   => SW(17),
+--        negativo => SW(16),
+--        overFlow => SW(15),
+		  
+        -- Output ports
+        saida7seg => saidaHEX2
+		 );
+		 
+	H3: entity work.conversorHex7Seg 
+		port map(
+			-- Input ports
+        dadoHex => saidaReg3,
+--        apaga   => SW(17),
+--        negativo => SW(16),
+--        overFlow => SW(15),
+		  
+        -- Output ports
+        saida7seg => saidaHEX3
+		 );
+		 
+	HEX0 <= "0111111";
+	HEX1 <= "0111111";
+	HEX2 <= "0111111";
+	HEX3 <= "0111111";
+	HEX4 <= saidaHEX0;
+	HEX5 <= saidaHEX1;
+	HEX6 <= saidaHEX2;
+	HEX7 <= saidaHEX3;
+	
+	LEDR <= SW;
+
+END comportamento;

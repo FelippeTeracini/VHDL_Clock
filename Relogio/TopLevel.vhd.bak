@@ -1,0 +1,22 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+ENTITY DISPLAY IS
+	PORT (
+		--- IN ---
+		SW  : IN std_logic_vector(17 downto 0);
+		
+		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : OUT STD_LOGIC_VECTOR(6 downto 0)
+
+	);
+
+END DISPLAY;
+
+ARCHITECTURE comportamento OF DISPLAY IS
+
+BEGIN
+
+	HEX0[0] => SW[0];
+
+END comportamento;

@@ -42,7 +42,8 @@ architecture comportamento of CpuNoUc is
 	signal selMuxEnd : std_logic;
 
 begin
-
+	
+	-- Banco de registradores + ULA --
 	BncULA : entity work.Banco_ULA generic map(larguraDados => larguraDadosBanco, larguraEnd =>  larguraEnd)
 		port map(
 			Clk => Clk,
@@ -56,7 +57,8 @@ begin
 			bancoOut => bancoOut,
 			saidaZero => outZero
 		);
-		
+	
+   -- Bloco Program Counter --	
 	Pc : entity work.PC generic map(addrWidth => larguraEndROM)
 		port map(
 			Clk => Clk,
@@ -67,7 +69,8 @@ begin
 			imediatoEnd => DadoROM(larguraEndROM-1 downto 0),
          Addr => Addr
 		);
-		
+	
+	-- Mux de selecao entre imediato e DataIn --
 	Mux : entity work.MUX2_1 generic map(N => larguraDadosBanco)
 		port map(
 			A => DadoROM(larguraDadosBanco-1 downto 0),

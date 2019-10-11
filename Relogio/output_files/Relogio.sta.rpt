@@ -1,13 +1,13 @@
-Timing Analyzer report for Relogio
-Tue Oct 08 14:04:55 2019
-Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+TimeQuest Timing Analyzer report for Relogio
+Fri Oct 11 14:53:46 2019
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
 ---------------------
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Timing Analyzer Summary
+  2. TimeQuest Timing Analyzer Summary
   3. Parallel Compilation
   4. Clocks
   5. Slow 1200mV 85C Model Fmax Summary
@@ -79,14 +79,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
  71. Unconstrained Output Ports
  72. Unconstrained Input Ports
  73. Unconstrained Output Ports
- 74. Timing Analyzer Messages
+ 74. TimeQuest Timing Analyzer Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2018  Intel Corporation. All rights reserved.
+Copyright (C) 2017  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -103,10 +103,10 @@ refer to the applicable agreement for further details.
 
 
 +-----------------------------------------------------------------------------+
-; Timing Analyzer Summary                                                     ;
+; TimeQuest Timing Analyzer Summary                                           ;
 +-----------------------+-----------------------------------------------------+
-; Quartus Prime Version ; Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                           ;
 ; Revision Name         ; Relogio                                             ;
 ; Device Family         ; Cyclone IV E                                        ;
 ; Device Name           ; EP4CE115F29C7                                       ;
@@ -124,14 +124,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.91        ;
+; Average used               ; 1.76        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  32.5%      ;
-;     Processor 3            ;  31.8%      ;
-;     Processor 4            ;  27.0%      ;
+;     Processor 2            ;  27.0%      ;
+;     Processor 3            ;  26.3%      ;
+;     Processor 4            ;  22.5%      ;
 +----------------------------+-------------+
 
 
@@ -1429,8 +1429,8 @@ No synchronizer chains to report.
 ; -8.853 ; Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[1]                             ; BCD:BCD|registrador:RegHour0|output[2]   ; CLOCK_50                                               ; CLOCK_50    ; 1.000        ; -0.694     ; 9.146      ;
 ; -8.851 ; Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[1]                             ; BCD:BCD|registrador:RegHour0|output[3]   ; CLOCK_50                                               ; CLOCK_50    ; 1.000        ; -0.694     ; 9.144      ;
 ; -8.851 ; Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[1]                             ; BCD:BCD|registrador:RegHour0|output[1]   ; CLOCK_50                                               ; CLOCK_50    ; 1.000        ; -0.694     ; 9.144      ;
-; -8.847 ; Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[2]                             ; BCD:BCD|registrador:RegSecond0|output[1] ; CLOCK_50                                               ; CLOCK_50    ; 1.000        ; -0.504     ; 9.330      ;
 ; -8.847 ; Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[4]                             ; BCD:BCD|registrador:RegMinute0|output[2] ; CLOCK_50                                               ; CLOCK_50    ; 1.000        ; -0.521     ; 9.313      ;
+; -8.847 ; Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[2]                             ; BCD:BCD|registrador:RegSecond0|output[1] ; CLOCK_50                                               ; CLOCK_50    ; 1.000        ; -0.504     ; 9.330      ;
 ; -8.836 ; Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[5]                             ; BCD:BCD|registrador:RegHour0|output[2]   ; CLOCK_50                                               ; CLOCK_50    ; 1.000        ; -0.698     ; 9.125      ;
 ; -8.834 ; Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[5]                             ; BCD:BCD|registrador:RegHour0|output[3]   ; CLOCK_50                                               ; CLOCK_50    ; 1.000        ; -0.698     ; 9.123      ;
 ; -8.834 ; Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[5]                             ; BCD:BCD|registrador:RegHour0|output[1]   ; CLOCK_50                                               ; CLOCK_50    ; 1.000        ; -0.698     ; 9.123      ;
@@ -2596,21 +2596,21 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +-------------+---------------------------------------------------------------------------------------+
 
 
-+--------------------------+
-; Timing Analyzer Messages ;
-+--------------------------+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Timing Analyzer
-    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Tue Oct 08 14:04:50 2019
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Fri Oct 11 14:53:41 2019
 Info: Command: quartus_sta Relogio -c Relogio
-Info: qsta_default_script.tcl version: #1
+Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): The Timing Analyzer is analyzing 9 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
-Critical Warning (332012): Synopsys Design Constraints File file not found: 'Relogio.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 9 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Relogio.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
@@ -2618,7 +2618,7 @@ Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name KEY[1] KEY[1]
     Info (332105): create_clock -period 1.000 -name SW[14] SW[14]
     Info (332105): create_clock -period 1.000 -name KEY[0] KEY[0]
-Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: BaseTempo|Mux|Y[0]  from: dataa  to: combout
     Info (332098): Cell: Rom|content~10  from: dataa  to: combout
     Info (332098): Cell: Rom|content~14  from: datab  to: combout
@@ -2627,11 +2627,11 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: Rom|content~16  from: datad  to: combout
     Info (332098): Cell: Rom|content~17  from: dataa  to: combout
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
-Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1200mV 85C Model
 Critical Warning (332148): Timing requirements not met
-    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
 Info (332146): Worst-case setup slack is -19.520
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -2665,7 +2665,7 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info: Analyzing Slow 1200mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: BaseTempo|Mux|Y[0]  from: dataa  to: combout
     Info (332098): Cell: Rom|content~10  from: dataa  to: combout
     Info (332098): Cell: Rom|content~14  from: datab  to: combout
@@ -2673,9 +2673,9 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: Rom|content~16  from: datac  to: combout
     Info (332098): Cell: Rom|content~16  from: datad  to: combout
     Info (332098): Cell: Rom|content~17  from: dataa  to: combout
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
 Info (332146): Worst-case setup slack is -17.759
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -2707,7 +2707,7 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -3.000              -4.285 SW[14] 
     Info (332119):    -0.072              -1.041 Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[0] 
 Info: Analyzing Fast 1200mV 0C Model
-Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
     Info (332098): Cell: BaseTempo|Mux|Y[0]  from: dataa  to: combout
     Info (332098): Cell: Rom|content~10  from: dataa  to: combout
     Info (332098): Cell: Rom|content~14  from: datab  to: combout
@@ -2715,9 +2715,9 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
     Info (332098): Cell: Rom|content~16  from: datac  to: combout
     Info (332098): Cell: Rom|content~16  from: datad  to: combout
     Info (332098): Cell: Rom|content~17  from: dataa  to: combout
-Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
-    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
 Info (332146): Worst-case setup slack is -9.134
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
@@ -2750,9 +2750,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     0.063               0.000 Cpu:Cpu|CpuNoUc:CPUnoUC|PC:Pc|registrador:PC|output[0] 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime Timing Analyzer was successful. 0 errors, 6 warnings
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4852 megabytes
-    Info: Processing ended: Tue Oct 08 14:04:55 2019
+    Info: Processing ended: Fri Oct 11 14:53:46 2019
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:05
 

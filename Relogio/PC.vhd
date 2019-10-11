@@ -22,7 +22,8 @@ architecture assincrona of PC is
 	signal outPC, outSomador, outMux: std_logic_vector(addrWidth-1 DOWNTO 0);
 
 begin
-
+	
+	-- Selecao entre Somar 1 ou imediato --
 	Mux : entity work.MUX2_1 generic map(N => addrWidth)
 		port map(
 			A	=> imediatoEnd,
@@ -30,14 +31,16 @@ begin
 			Sel => Sel,
 			Y	=> outMux
 		);
-
+	
+	-- Somador --
 	Somador : entity work.somadorGenerico generic map(larguraDados => addrWidth)
 		port map(
 			entradaA => outPC,
 			entradaB => B_somador,
 			saida => outSomador
 		);
-
+	
+	-- Program Counter --
 	PC : entity work.registrador generic map(N => addrWidth)
 		port map(
 			clk => Clk,

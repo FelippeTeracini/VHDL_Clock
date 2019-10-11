@@ -14,15 +14,19 @@ entity BancoDeRegistradores is
 -- Leitura de 2 registradores e escrita em 1 registrador simultaneamente.
     port
     (
+		-- Clock --
         clk        : in std_logic;
 --
-
+		-- Endereco de Escrita --
         enderecoC   : in std_logic_vector((larguraEndBancoRegs-1) downto 0);
+		-- Dado de Escrita --
         dadoEscritaC    : in std_logic_vector((larguraDados-1) downto 0);
+		-- Habilita Escrita --
         escreveC      : in std_logic;
 --
-
-		  enderecoA       : in std_logic_vector((larguraEndBancoRegs-1) downto 0);  
+		-- Endereco de Leitura --
+		  enderecoA       : in std_logic_vector((larguraEndBancoRegs-1) downto 0); 
+		-- Dado de saida --
         saidaA          : out std_logic_vector((larguraDados -1) downto 0)
         
     );

@@ -16,16 +16,23 @@ ENTITY Cpu IS
         Clk : IN std_logic;
 
         -- In e Out CPU --
+		  -- Dados dos Botoes e Base de Tempo --
         DataIn : IN std_logic_vector((larguraDadosBanco - 1) DOWNTO 0);
+		  -- Saida de dados do CPU --
         bancoOut : OUT std_logic_vector((larguraDadosBanco - 1) DOWNTO 0);
+		  -- Saida de enderecos do CPU --
 		  ADDROut : OUT std_logic_vector((larguraDadosBanco - 1) DOWNTO 0);
 		  
 		  -- Control --
+		  -- Habilita Read no Decoder --
 		  RD : OUT std_logic;
+		  -- Habilita Write no Decoder --
 		  WR : OUT std_logic;
 
         -- In e Out ROM --
+		  -- Endereco de acesso da ROM --
         Addr : OUT std_logic_vector(larguraEndROM - 1 DOWNTO 0);
+		  -- Saida de dados da ROM --
         DadoROM : IN std_logic_vector(larguraDadosRom - 1 DOWNTO 0)
 
     );

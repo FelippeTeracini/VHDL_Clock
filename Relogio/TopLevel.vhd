@@ -4,12 +4,18 @@ USE ieee.numeric_std.ALL;
 
 ENTITY TopLevel IS
 	PORT (
+		-- Botoes FPGA --
 		KEY      : IN std_logic_vector(3 downto 0);
+		-- Switches FPGA --
 		SW       : IN std_logic_vector(17 downto 0);
+		-- Clock FPGA --
 		CLOCK_50 : IN std_logic;
+		-- LEDs dos Switches FPGA --
 		LEDR     : OUT std_logic_vector(17 downto 0) := (others => '0');
+		-- LEDs dos Botoes FPGA --
 		LEDG     : OUT std_logic_vector(7 downto 0) := (others => '0');
 		
+		-- Displays FPGA --
 		HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7 : OUT STD_LOGIC_VECTOR(6 downto 0)
 	);
 
@@ -48,7 +54,8 @@ BEGIN
 --                end if;
 --            end if;
 --        end process;
-
+	
+	-- Base de Tempo --
 	BaseTempo : entity work.Base_de_tempo_bloco
 		port map (
 			clk => CLOCK_50,
@@ -58,7 +65,8 @@ BEGIN
 			
 			saida_buffer => dataIn(0)
 		);
-		
+	
+	-- ROM --
 	Rom : entity work.romMif
 		generic map (
 			dataWidth => 14,
@@ -69,6 +77,7 @@ BEGIN
 			Dado => dadoRom
 		);
 
+	-- CPU --
 	Cpu : entity work.Cpu
 		generic map (
 			larguraDadosROM => 14,
@@ -89,7 +98,8 @@ BEGIN
 			Addr => addrRom,
 			DadoROM => dadoRom
 		);
-
+	
+	-- Decoder de enderecos --
 	DecoderEndereco : entity work.Decoder_endereco
 		port map (
 			ADDR => addrOut,
@@ -108,7 +118,8 @@ BEGIN
 			RD_ButHrs => rd_butHrs,
 			RESET_ButHrs => reset_butHrs
 		);
-
+	
+	-- Conversor BCD e saida para os displays --
 	BCD : entity work.BCD
 		port map (
 			clk => CLOCK_50,
@@ -126,7 +137,8 @@ BEGIN
 			saidaHEX5 => HEX7,
 			saidaHEX7 => HEX0
 		);
-		
+	
+	-- Button IO --
 	Buttons : entity work.Button_IO 
 		port map (
 			ButInput => KEY,

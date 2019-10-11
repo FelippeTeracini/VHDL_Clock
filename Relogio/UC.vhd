@@ -5,16 +5,25 @@ USE ieee.numeric_std.ALL;
 ENTITY UC IS
 	PORT (
 		--- IN ---
+		-- opcode --
 		opcode : IN std_logic_vector(2 DOWNTO 0);
 
 		--- OUT ---
+		-- operacao da ula --
 		op : OUT std_logic_vector(1 DOWNTO 0);
+		-- enable jmp --
 		jmp : OUT std_logic;
+		-- enable jmpne --
 		jne : OUT std_logic;
+		-- habilita escrita no banco --
 		HabBanco : OUT std_logic;
+		-- habilita escrita no registrador RD, que indica o resultado da saida ZERO da ULA --
 		HabRD : OUT std_logic;
+		-- habilita Read de enderecos do decoder --
 		RD : OUT std_logic;
+		-- habilita Write de enderecos do decoder --
 		WR : OUT std_logic;
+		-- Seleciona entre Imediato e DataIn na entrada B da ULA --
 		MuxULA : OUT std_logic
 
 	);

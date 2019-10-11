@@ -4,7 +4,7 @@ USE ieee.numeric_std.ALL;
 
 ENTITY TopLevelTeste IS
 	PORT (
-	
+		
 		Clk : in std_logic;
 		dataIn : in std_logic_vector(7 downto 0);
 		dataOut : out std_logic_vector(7 downto 0);

@@ -4,8 +4,11 @@ use ieee.numeric_std.all;
 
 entity Base_de_tempo_bloco is
    port(
+		-- Clock --
       clk        :   in std_logic;
+		-- Seletor de velocidade --
 		speed      :   in std_logic;
+		
 		reset      :   in std_logic;
 		enable     :   in std_logic;
 		
@@ -18,15 +21,18 @@ architecture comportamento of Base_de_tempo_bloco is
 	signal mux0, mux1, muxOut, regOut : std_logic;
 
 begin
-
+	
+	-- Velocidade normal do relogio --
 	base_lento : entity work.Base_de_tempo
 		generic map (N => 25000000)
 		port map (clk => clk, saida_clk => mux0);
-		
+	
+	-- Velocidade rapida do relogio --
 	base_rapida : entity work.Base_de_tempo
 		generic map (N => 500000)
 		port map (clk => clk, saida_clk => mux1);
-
+	
+	-- Seleciona a velocidade --
 	Mux : entity work.MUX2_1 
 		generic map (N => 1)
 		port map (

@@ -204,8 +204,8 @@ while (1) {
   | ----------------- |:-----------:|:-------------------:|
   | SW[14]            |  UP         |  Fast Speed         |
   | SW[14]            |  DOWN       |  Normal Speed       | 
-  | SW[17]            |  UP         |  24Hrs Clock        |
-  | SW[17]            |  DOWN       |  12Hrs AM/PM Clock  |
+  | SW[17]            |  UP         |  12Hrs AM/PM Clock  |
+  | SW[17]            |  DOWN       |  24Hrs Clock        |
   | KEY[0]            |  ON PRESS   |  Add 1 to minutes   |
   | KEY[1]            |  ON PRESS   |  Add 1 to hours     |     
   

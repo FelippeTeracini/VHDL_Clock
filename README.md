@@ -198,7 +198,16 @@ while (1) {
    To create the `.mif` code responsible for the Clock on the FPGA, using python 3.7 run `python3 watch_assembler.py -mif    Assembly.txt > initROM.mif`
   #### 1.2. creating your own mif:
    To create your `.mif` code first you need a assembly file that has the **exact same instructions and sintax** explained above. You may need/want to alter the dict table on `def get_register(self, register):` in the `watch_assembler.py` if you need to alter the names of the registers.
-  
+   
+ ### 2. Using the clock:
+  | Switch/Button     | Status      | Functionality       |
+  | ----------------- |:-----------:|:-------------------:|
+  | SW[14]            |  UP         |  Fast Speed         |
+  | SW[14]            |  DOWN       |  Normal Speed       | 
+  | SW[17]            |  UP         |  24Hrs Clock        |
+  | SW[17]            |  DOWN       |  12Hrs AM/PM Clock  |
+  | KEY[0]            |  ON PRESS   |  Add 1 to minutes   |
+  | KEY[1]            |  ON PRESS   |  Add 1 to hours     |     
   
 ## References
 [VHDL Quick Reference Card da Synthworks.](http://www.synthworks.com/downloads/vhdl_quickref.pdf)

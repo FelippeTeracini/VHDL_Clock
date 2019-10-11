@@ -145,15 +145,15 @@ while (1) {
 ## Address and Register table
 
 | REGISTER   NAME     | REGISTER ADDRESS  | 
-| ------------- |:-------------:|
-| hours         |      0        |         
-| minutes       |      1        |  
-| seconds       |      2        |
-| time_base     |      3        |
-| add_min       |      4        |
-| add_hour      |      5        |
-| 6             |      6        |         
-| 7             |      7        |         
+| ------------------- |:----------------: |
+| time_base           |      0            |         
+| add_min             |      1            |  
+| add_hour            |      2            |
+| display minutes     |      3            |
+| display hours       |      4            |
+| display seconds     |      5            |
+| 6                   |      6            |         
+| 7                   |      7            |         
 
 
 
@@ -204,8 +204,8 @@ while (1) {
   | ----------------- |:-----------:|:-------------------:|
   | SW[14]            |  UP         |  Fast Speed         |
   | SW[14]            |  DOWN       |  Normal Speed       | 
-  | SW[17]            |  UP         |  24Hrs Clock        |
-  | SW[17]            |  DOWN       |  12Hrs AM/PM Clock  |
+  | SW[17]            |  UP         |  12Hrs AM/PM Clock  |
+  | SW[17]            |  DOWN       |  24Hrs Clock        |
   | KEY[0]            |  ON PRESS   |  Add 1 to minutes   |
   | KEY[1]            |  ON PRESS   |  Add 1 to hours     |     
   

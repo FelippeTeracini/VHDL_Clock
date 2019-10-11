@@ -145,15 +145,15 @@ while (1) {
 ## Address and Register table
 
 | REGISTER   NAME     | REGISTER ADDRESS  | 
-| ------------- |:-------------:|
-| hours         |      0        |         
-| minutes       |      1        |  
-| seconds       |      2        |
-| time_base     |      3        |
-| add_min       |      4        |
-| add_hour      |      5        |
-| 6             |      6        |         
-| 7             |      7        |         
+| ------------------- |:----------------: |
+| time_base           |      0            |         
+| add_min             |      1            |  
+| add_hour            |      2            |
+| display minutes     |      3            |
+| display hours       |      4            |
+| display seconds     |      5            |
+| 6                   |      6            |         
+| 7                   |      7            |         
 
 
 

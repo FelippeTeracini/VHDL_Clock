@@ -169,7 +169,7 @@ while (1) {
 
 
 ## CPU and ROM
-Inserir imagem
+![alt text](CPU_ROM.jpg)
 
 ## IO
 ![alt text](BUTTON_IO.jpg)

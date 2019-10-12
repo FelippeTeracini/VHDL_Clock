@@ -1,5 +1,5 @@
 # Clock in a FPGA
-Felippe Teracini, Guilherme Schoeri, Juan Garcia
+Felippe Teracini, Guilherme Schoueri, Juan Garcia
 
 # Table of Contents
 1. [Introduction](#introduction)

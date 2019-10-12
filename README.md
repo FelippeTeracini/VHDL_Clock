@@ -172,7 +172,7 @@ while (1) {
 ![alt text](CPU_ROM.jpg)
 
 ## IO
-![alt text](BUTTON_IO.jpg)
+![alt text](Perifericos.jpg)
 
 
 ## Memory Mapping
